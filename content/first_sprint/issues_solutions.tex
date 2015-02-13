@@ -2,4 +2,9 @@
 
 \section{Issues and Solutions}
 
-We conducted a series of unstructured tests and UI/Application Exerciser Monkey (Monkey) tests in order to explore the launcher and find bugs during the start of the first sprint. We found the Monkey tool to be usefull and indeed it did find a few concurrency issues 
+We conducted a series of unstructured tests and UI/Application Exerciser Monkey (Monkey) \todo{http://developer.android.com/tools/help/monkey.html} tests in order to explore the launcher and find bugs during the start of the first sprint. 
+
+
+Monkey is a tool, which comes with the Android Debug Bridge (adb) \todo{http://developer.android.com/tools/help/adb.html}, used to perform series of pseudo-random streams of user events to test the application UI under stress.
+
+We found the Monkey tool to be useful and indeed it did help us find a few concurrency issues when switching between tabs in the settings activity of the launcher.
