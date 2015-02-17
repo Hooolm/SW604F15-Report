@@ -26,7 +26,7 @@ synchronized
 
 \subsection{Fragment management}
 
-When nesting Android \javainline{Fragment} objects, i.e having a \javainline{Fragment} which contains another \javainline{Fragment} in its layout, it is imperative that the parent Fragments uses a \javainline{FragmentManager} provided by a call to \javainline{getChildFragmentManager} instead of the \javainline{FragmentManager} provided by the parent activity. The \giraf-class \javainline{AppManagementFragment} failed to do this.   
+When nesting Android \androidinline{Fragment} objects, i.e having a \androidinline{Fragment} which contains another \androidinline{Fragment} in its layout, it is imperative that the parent Fragments uses a \androidinline{FragmentManager} provided by a call to \androidinline{getChildFragmentManager} instead of the \androidinline{FragmentManager} provided by the parent activity. The \giraf-class \androidinline{AppManagementFragment} failed to do this.   
 
 AppManagementFragment
 
@@ -35,7 +35,7 @@ AppManagementFragment
 
 \subsection{Fragment constructors}
 
-According to the Android API documentation \parentcite{android_dev_fragment} Android Fragment subclasses classes must make a public no-argument constructor, a default constructor, available. However the \giraf-class \javainline{SettingsLauncher} failed to provide such a default constructor which caused crashes. The standard practice when sub classing \javainline{Fragment} objects is to provide a static factory method, which creates a new instance of the \javainline{Fragment} subclass, called \javainline{newInstance}. \javainline{newInstance} takes its arguments and passes them to the created \javainline{Fragment} subclass object through an Android \javainline{Bundle} instance. 
+According to the Android API documentation \parencite{android_dev_fragment} Android Fragment subclasses classes must make a public no-argument constructor, a default constructor, available. However the \giraf-class \androidinline{SettingsLauncher} failed to provide such a default constructor which caused crashes. The standard practice when sub classing \androidinline{Fragment} objects is to provide a static factory method, which creates a new instance of the \androidinline{Fragment} subclass, called \androidinline{newInstance}. \androidinline{newInstance} takes its arguments and passes them to the created \androidinline{Fragment} subclass object through an Android \androidinline{Bundle} instance. 
 
 \input{content/first_sprint/issues_solutions/inconsistent_tab_size_in_settings_panel}
 
