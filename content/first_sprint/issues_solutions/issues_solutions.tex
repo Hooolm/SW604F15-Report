@@ -8,7 +8,6 @@ Monkey is a tool, which comes with the Android Debug Bridge (adb) \parencite{and
 
 We found the Monkey tool to be useful and indeed it did help us find a few concurrency issues when switching between tabs in the settings activity of the launcher.
 
-<<<<<<< HEAD:content/first_sprint/issues_solutions.tex
 Mistakes, in general, might occur multiple times in code base, and will be corrected when discovered, but will only be  mentioned further.
 
 
@@ -37,6 +36,6 @@ AppManagementFragment
 \subsection{Fragment constructors}
 
 According to the Android API documentation \parentcite{android_dev_fragment} Android Fragment subclasses classes must make a public no-argument constructor, a default constructor, available. However the \giraf-class \javainline{SettingsLauncher} failed to provide such a default constructor which caused crashes. The standard practice when sub classing \javainline{Fragment} objects is to provide a static factory method, which creates a new instance of the \javainline{Fragment} subclass, called \javainline{newInstance}. \javainline{newInstance} takes its arguments and passes them to the created \javainline{Fragment} subclass object through an Android \javainline{Bundle} instance. 
-=======
+
 \input{content/first_sprint/issues_solutions/inconsistent_tab_size_in_settings_panel}
->>>>>>> origin/master:content/first_sprint/issues_solutions/issues_solutions.tex
+
