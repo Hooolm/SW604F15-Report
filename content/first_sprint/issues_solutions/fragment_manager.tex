@@ -1,0 +1,7 @@
+%!TEX root = ../../../super_main.tex
+\section{Fragment Manager}
+\label{sec:fragment_manager}
+
+When nesting Android \androidinline{Fragment} objects, i.e having a \androidinline{Fragment} which contains another \androidinline{Fragment} in its layout, it is imperative that the parent Fragments uses a \androidinline{FragmentManager} provided by a call to \androidinline{getChildFragmentManager} instead of the \androidinline{FragmentManager} provided by the parent activity. The \giraf-class \androidinline{AppManagementFragment} failed to do this.   
+
+AppManagementFragment
