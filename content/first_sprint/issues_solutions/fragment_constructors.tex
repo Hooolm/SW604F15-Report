@@ -1,0 +1,6 @@
+%!TEX root = ../../../super_main.tex
+
+\section{Fragment Constructors}
+\label{sec:fragment_constructors}
+
+According to the Android API documentation \parencite{android_dev_fragment} Android Fragment subclasses classes must make a public no-argument constructor, a default constructor, available. However the \giraf-class \androidinline{SettingsLauncher} failed to provide such a default constructor which caused crashes. The standard practice when sub classing \androidinline{Fragment} objects is to provide a static factory method, which creates a new instance of the \androidinline{Fragment} subclass, called \androidinline{newInstance}. \androidinline{newInstance} takes its arguments and passes them to the created \androidinline{Fragment} subclass object through an Android \androidinline{Bundle} instance.
