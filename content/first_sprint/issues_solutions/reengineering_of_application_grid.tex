@@ -3,6 +3,13 @@
 \section{Reengineering of Application Grid}
 \label{sec:reengineering_of_application_grid}
 
-When the launcher of the \giraf system is being used, and the user presses the drawer, the application grid becomes smaller as a result of the drawer moving on the screen. The resulting smaller area has to be repopulated with icons, since the icons no longer have proper placements. The application icons are currently being placed by using LinearLayouts placed in rows, which then contain an amount of icons based on icon size. The computation of how many rows are needed, the location of all icons, etc., has a serious effect on performance and smoothness of the launcher. This gives the user a poor experience when interacting with the application, and we would therefore like to improve the application 
-
+When the launcher of the \giraf system is being used, and the user presses the drawer on the left-hand side, the application grid becomes smaller as a result of the drawer moving on the screen. The resulting smaller area has to be repopulated with icons, since the icons no longer have proper placements. Furthermore the application window currently has a fixed size, while the user is able to select as many applications as he/she wants. This means that if too many applications are chosen, they will surpass the size of the window, and therefore be pushed out of the window.
 \todo[inline]{Add some figure that describes how the problem was solved}.
+The applications are currently being placed in the launcher by using LinearLayouts placed in rows, which then individually contain an amount of icons respective to the icon size. The computation of how many rows are needed, the location of all icons, etc., has a serious effect on performance and smoothness of the launcher. This gives the user a poor experience when interacting with the application, and we would therefore like to improve the launcher application such that it uses a ViewPager and a Grid structure instead. A ViewPager is the standard application showing method for phones and tablets, where the user is able to swipe from side to side between the different pages with applications on them. This is desirable since it gives the user a consistent experience with devices they usually use. A Grid is preferable over a rows of LinearLayouts since it is easier to build and populate with icons, which should result in increased performance. 
+\\\\
+There are furthermore issues with the applications being shown either several times or not at all upon loading the launcher. We assume this is caused by the way the LinearLayouts are being made and at which times the call to create a new view happens, and will therefore be resolved once the implementation is changed to a grid. 
+
+\subsection{Solution}
+\label{sub:reengineering_of_application_grid_solution}
+\todo[inline]{Write how we solved the grid rework}
+

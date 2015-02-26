@@ -1,12 +1,11 @@
 %!TEX root = ../../../super_main.tex
-
 \section{Crash in Settings Tab}
 \label{sec:crash_in_settings_tab}
 
 A bug related to the settings menu in the launcher GUI was discovered during one of the initial automated monkey test of the GUI. The bug occured when the different tabs of the settings menu was clicked in rappid succession, specifically when the tab containing which android apps the user should be to see.
-
+\\\\
 The cause of the bug was found to be a race condition caused by manipultion of a static reference called \androidinline{mAppInfoHashMap}, in a \androidinline{AppViewCreationUtility} object, on the main (GUI) thread and the a background thread managed by a LoadApplicationTask. The reference was manipulated in two different methods \androidinline{updateAppInfoHashMap} and a method \androidinline{onClick} defined in an anonymous subclass of \androidinline{View.OnClickListener}. The race condtion occurs because the \androidinline{onClick} is invoked on the GUI thread while the \androidinline{updateAppInfoHashMap} method is invoked on the a background thread, managed by a LoadApplicationTask, concurrently.   
-
+\\\\
 The race condtion was resolved using monitors, i.e. by utilizing the \androidinline{synchronized} Java keyword, in order to protect the critical sections where the \androidinline{mAppInfoHashMap} reference was manipulated.
 
 

@@ -1,0 +1,23 @@
+%!TEX root = ../../../super_main.tex
+\section{Settings Alignment}
+\label{sec:settings_alignment}
+
+The settings tab in the launcher contains the different settings for the user. It was discovered during the development, that some of the settings in the panel were not aligned, which gave a bad user impression. We would like to change it so that all the settings in the settings panel are aligned to the left side, such that the panel has a consistent and smooth look. The look of the panel with misplaced settings can be seen in \figref{fig:settings_alignment_bad}.
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=\textwidth]{sprint_one/settings_alignment/bad_alignment}
+    \caption{Unaligned settings}
+    \label{fig:settings_alignment_bad}
+\end{figure}
+
+\subsection{Solution} 
+\label{sub:settings_alignment_solution}
+We discovered that the misplacement of the settings was caused by the way SwitchPreferences are made in Android. By default a SwitchPreference contains a picture to the left, then some text, and then a switch. As a result, the text is moved to the right to accommodate for the fact that a picture could be present. As we do not want to use pictures as an indicator for our SwitchPreference, we change the visibility of the hidden picture to be ``GONE'' instead. This makes the text able to use the space otherwise reserved for the picture, and the text is now nicely aligned with the settings below it. The panel with properly aligned settings can be seen in \figref{fig:settings_alignment_good}
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=\textwidth]{sprint_one/settings_alignment/good_alignment}
+    \caption{Aligned settings}
+    \label{fig:settings_alignment_good}
+\end{figure}
