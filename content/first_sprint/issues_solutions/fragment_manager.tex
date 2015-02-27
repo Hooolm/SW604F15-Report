@@ -2,4 +2,8 @@
 \section{Fragment Manager}
 \label{sec:fragment_manager}
 
-When nesting Android \androidinline{Fragment} objects, i.e having a \androidinline{Fragment} which contains another \androidinline{Fragment} in its layout, it is imperative that parent \androidinline{Fragment} objects uses a \androidinline{FragmentManager} provided by a call to \androidinline{getChildFragmentManager} instead of the \androidinline{FragmentManager} provided by the parent activity. The \giraf-class \androidinline{AppManagementFragment} failed to do this.    
+When nesting Android \androidinline{Fragment} objects, i.e having a \androidinline{Fragment} which contains another \androidinline{Fragment} in its layout, it is imperative that parent \androidinline{Fragment} objects uses a \androidinline{FragmentManager} provided by a call to \androidinline{getChildFragmentManager} instead of the \androidinline{FragmentManager} provided by the parent activity. The \giraf-class \androidinline{AppManagementFragment} failed to do this. Failing to use \androidinline{ChildFragmentManager} results in exceptions in new versions of the android API, and therefore it has to be solved. 
+
+\subsection{Solution} 
+\label{sub:fragment_manager_solution}
+Since the \giraf system supports API levels 15, 17 and 19, this issue has to be solved differently based on the used device's API level. API level 15 does not support \androidinline{ChildFragment}, and therefore does not support \androidinline{ChildFragmentManager} either. The solution to the issue is therefore to check which type of API level is present on the device, and if the device is at level 17 or above, use the \androidinline{ChildFragmentManager}, and otherwise use the regular \androidinline{FragmentManager}. This will be implemented where needed in the \giraf system and resolve the exception errors currently present. 
