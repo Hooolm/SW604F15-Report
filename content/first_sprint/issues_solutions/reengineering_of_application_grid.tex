@@ -3,28 +3,12 @@
 \section{Reengineering of Application Grid}
 \label{sec:reengineering_of_application_grid}
 
-When the launcher of the \giraf system is being used, and the user presses the drawer on the left-hand side, the application grid becomes smaller as a result of the drawer moving on the screen. The resulting smaller area has to be repopulated with icons, since the icons no longer have proper placements. Furthermore the application window currently has a fixed size, while the user is able to select as many applications as he/she wants. This means that if too many applications are chosen, they will surpass the size of the window, and therefore be pushed out of the window.
-The applications are currently being placed in the launcher by using LinearLayouts placed in rows, which then individually contain an amount of icons respective to the icon size. The computation of how many rows are needed, the location of all icons, etc., has a serious effect on performance and smoothness of the launcher. 
-
-
+When the launcher of the \giraf system is being used, and the user presses the drawer on the left-hand side, the application grid becomes smaller as a result of the drawer moving on the screen. The resulting smaller area has to be repopulated with icons, since the icons no longer have proper placements. Furthermore the application window currently has a fixed size, while the user is able to select as many applications as he/she wants. This means that if too many applications are chosen, they will surpass the size of the window, and therefore be pushed out of the window. The applications are currently being placed in the launcher by using \androidinline{LinearLayout}s placed in rows, which then individually contain an amount of icons respective to the icon size. The computation of how many rows are needed, the location of all icons, etc., has a serious effect on performance and smoothness of the launcher. 
 \\\\
-There are furthermore issues with the applications being shown either several times or not at all upon loading the launcher. We assume this is caused by the way the LinearLayouts are being made and at which times the call to create a new view happens
-
-
-
-\\\\
-The application grid had a setting in the settings menu which allowed the user to configure the icon size of the applications shown in the launcher. Changing the size of the icons actually only changed the size of the icons indirectly. What was really done, was that the chosen size of the icons was used to calculate a grid, constructed from \androidinline{LinearLayout} views, which could contain as many icons of the chosen size as possible. 
+The application grid has a setting in the settings menu which allows the user to configure the icon size of the applications shown in the launcher. The \androidinline{LinearLayout} views that are created fit as many icons of the given size inside as possible, while staying within the boundaries of the screen. This is some ``hack'' method that has been implemented in order to allow users to manually change how many icons they want to see in the launcher. This solution is bad, because instead of changing the actual amount of icons on the screen and scaling the items down, the items are just scaled down so more of them can fit on the screen, with no indication of how many icons you will now see. 
 
 \subsection{Solution}
 \label{sub:reengineering_of_application_grid_solution}
-\todo[inline]{Write how we solved the grid rework}
-
-A \androidinline{Grid} view is preferable over a rows of \androidinline{LinearLayouts} views since it is easier to build and populate with icons, which should result in increased performance.
-The creation of \androidinline{LinearLayout} views for rows and columns gives the user a poor experience when interacting with the application, and we would therefore like to improve the launcher application such that it uses a \androidinline{ViewPager} and a \androidinline{Grid} structure instead. 
-
-A \androidinline{ViewPager} is the standard way of allowing the user to page between screens of applications in other launcher activities. This is desirable since it gives the user a consistent experience with devices they usually use. 
-
-The other issues with applications being duplicated or not shown is assumed to have been fixed with the new grid implementation.
-
-
-% How we fixed settings
+The creation of \androidinline{LinearLayout} views gives the user a poor experience when interacting with the application, and we would therefore like to improve the launcher application such that it uses a \androidinline{ViewPager} which contains a \androidinline{Grid} structure instead. A \androidinline{Grid} view is preferable over a rows of \androidinline{LinearLayout} views since it is easier to build and populate with icons, which should result in increased performance. A \androidinline{ViewPager} is the standard way of allowing the user to page between screens of applications in other launcher activities, which is desirable since it gives the user a consistent experience with devices they usually use. 
+\\\\
+The functionality that allowed users to change the size of icons has been replaced with the possibility of changing the launcher grid size. The icon in the settings menu which showed a preview of the icon size now shows an example grid instead. The setting now corresponds to the implemented structure and behaves in the intended way.
