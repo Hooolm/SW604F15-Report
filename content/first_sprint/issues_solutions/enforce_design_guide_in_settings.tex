@@ -2,7 +2,7 @@
 \section{Enforce Design Guide In Settings}
 \label{sec:enforce_design_guide_in_settings}
 
-The graphical design of the GUI was found to be very inconsistent in general around in the \giraf-software suite. This issue was discovered by the \emph{SW606F15}, that is the group responsible for user requirements and the graphical design guide of the project.
+The graphical design of the GUI was found to be very inconsistent in general around in the \giraf-software suite. This issue was discovered by the \emph{SW606F15} group, who is the group responsible for user requirements and the graphical design guide of the project.
 \\\\
 In cooperation with this group it was found that the implementations of the GUI-components that existed needed refactoring based on the code quality and structure of the existing code base of GUI-components.
 
@@ -17,12 +17,12 @@ One of the problem found by \emph{SW606F15} is illustrated in figure \figref{fig
     \label{fig:button_inconsistency}
 \end{figure}
 
-This motivated \emph{SW606F15} to create a graphical design document which enforces a standard for the GUI \todo{Maybe insert the design document in the appendix and refer to it}. Further more this design flaw was found in the GUI of the launcher which made us commit to the job of solving this problem
-
-
-
-\begin{itemize}
-	\item Actionbar in settings panel
-	\item Switch user in settings panel
-	\item Update logout button in home activity
-\end{itemize}
+This motivated \emph{SW606F15} to create a graphical design document which will be used to enforce a standard for the GUI \todo{Maybe insert the design document in the appendix and refer to it}. Furthermore, this design flaw was found in the GUI of the launcher, which made us commit to the job of solving this problem. 
+\\\\
+To solve the button inconsistency, a standardized should be made. This standard for buttons should correspond to the looks and feel described in the design document created by \emph{SW606F15}. 
+\\\\
+At first, the design document indicated that the there should exists different button types. Each type should have a specific background color associated with it. For instance, buttons with arrow-icons should have a purple background. However, after implementing this feature, it was discovered that the users at \emph{Birken} did not like these new buttons, and would rather keep the look of the old buttons. However, consistency should still be enforced. This allows for consistent icons and background colors throughout the applications. 
+\\\\
+To create the standardized button a set of graphical icons were made by the \emph{SW606F15} group. These icons were then combined with a rounded square with a gradient background with the colors corresponding to the old buttons. All of this was made in the \mono{Giraf\_components}-module, which means that all applications are allowed to use this button. It is however still possible to use wrong icons. However, we hope that the other groups will start to use this new button in their projects.
+\\\\
+Buttons are not the only thing that is inconsistent in the design, however we did not have enough time to create any other standardized components. 
