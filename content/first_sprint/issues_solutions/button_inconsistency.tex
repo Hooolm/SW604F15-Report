@@ -24,7 +24,26 @@ To solve the button inconsistency, a standardized should be made. This standard 
 
 At first, the design document indicated that the there should exists different button types. Each type should have a specific background color associated with it. For instance, buttons with arrow-icons should have a purple background. However, after implementing this feature, it was discovered that the users at \emph{Birken} did not like these new buttons, and would rather keep the look of the old buttons. However, consistency should still be enforced. This allows for consistent icons and background colors throughout the applications. 
 
-\todo[inline]{Insert picture of beautiful colored buttons and picture of ugly yellow buttons(sent in email to Niklas)}.
+\begin{figure}[!htbp]
+    \centering
+
+    \begin{subfigure}[t]{0.3\textwidth}
+    	\centering
+        \includegraphics[width=0.3\textwidth]{sprint_one/ugly_and_beautiful_buttons/button_redesign_beautiful}
+        \caption{Colorfull buttons}
+        \label{fig:ugly_and_beautiful_buttons_example_one}
+    \end{subfigure}
+    \hspace{5em} 
+    \begin{subfigure}[t]{0.3\textwidth}
+    	\centering
+        \includegraphics[width=0.3\textwidth]{sprint_one/ugly_and_beautiful_buttons/button_redesign_ugly}
+        \caption{Yellow buttons}
+        \label{fig:ugly_and_beautiful_buttons_example_two}
+    \end{subfigure}
+    
+    \caption{Solutions visualized}
+    \label{fig:ugly_and_beautiful_buttons_example_solution}
+\end{figure}
 
 To create the standardized button a set of graphical icons were made by the \emph{SW606F15} group. These icons were then combined with a rounded square with a gradient background with the colors corresponding to the old buttons. All of this was made in the \mono{Giraf\_components}-module, which means that all applications are allowed to use this button. It is however still possible to use wrong icons. However, we hope that the other groups will start to use this new button in their projects.
 \\\\
