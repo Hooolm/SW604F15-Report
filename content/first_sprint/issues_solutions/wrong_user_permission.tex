@@ -2,7 +2,7 @@
 \section{Wrong User Permissions}
 \label{sec:wrong_user_permissions}
 
-In the \giraf-applications, there exists three different profile-types, namely \emph{Administrator}, \emph{Guardian}, and \emph{User}. Administrators have the most permissions, and are allowed to create guardians and users. Guardians can administrate a subset of the users, for instance the users connected to a specific institution, or part of an institution. Users are allowed to use different applications, namely the ones that have been added to their profile by one of their guardians. 
+In the \giraf-applications, there exists three different profile-types, namely \emph{Administrator}, \emph{Guardian}, and \emph{User}. Administrators have the widest permissions, and are allowed to create guardians and users. Guardians can administrate a subset of the users, for instance the users connected to a specific institution, or part of an institution. Users are allowed to use different applications, namely the ones that have been added to their profile by one of their guardians. 
 \\\\
 However, these different profile-types are not enforced correctly in the \launcher-application. Currently, guardian- and user profiles have access to the same features. For instance, a regular user may access the settings-panel and choose which applications that should be accessible for that particular user. This feature should only be available for guardians- and administrator profiles.
 \\\\
@@ -10,3 +10,5 @@ Before a guardian hands the tablet to a user, the guardian needs to switch profi
 
 \subsection{Solutions}
 \label{sub:wrong_user_permissions_solutions}
+
+We fixed 
