@@ -2,9 +2,11 @@
 
 \chapter{Issues and Solutions}
 
-We conducted a series of unstructured tests and UI/Application Exerciser Monkey (Monkey) \parencite{android_monkey} tests in order to explore the launcher and find bugs during the start of the first sprint. Monkey is a tool, which comes with the Android Debug Bridge (adb) \parencite{android_adb}, used to perform series of pseudo-random streams of user events to test the application UI under stress. We found the Monkey tool to be useful and it did help us find several issues in the code, e.g. concurrency issues when switching between tabs in the settings activity of the launcher.
+The launcher application seems to be working fine at a first glance, but at further inspection it has a lot of edge cases that cause it to crash when used for longer periods of time. In order to find these crashes we conducted a series of unstructured tests and UI/Application Exerciser Monkey (Monkey) \parencite{android_monkey} tests to explore the launcher and find bugs during the start of the first sprint. Monkey is a tool, which comes with the Android Debug Bridge (adb) \parencite{android_adb}, used to perform series of pseudo-random streams of user events to test the application UI under stress. We found the Monkey tool to be useful and it did help us find several issues in the code, e.g. concurrency issues when switching between tabs in the settings activity of the launcher.
 \\\\
 Android and general code mistakes might occur multiple times in code base, and will be corrected when discovered, but only the first discovered occurrence is mentioned in this chapter. 
+\\\\
+In addition to the issues discovered by using the Monkey tool, some requests from the costumers regarding design will also be described during this section.
 
 \input{content/first_sprint/issues_solutions/crash_in_settings_tab}
 
