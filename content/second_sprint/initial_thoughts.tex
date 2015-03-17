@@ -1,14 +1,29 @@
 %!TEX root = ../../super_main.tex
 \section{Initial thoughts}
 
-The category tool was in an appaling and unstable state when this group inherited it. The category tool does not conform to many general design principles and crashes often.
-
-\subsection{Interaction design}
-
-There is too much functionality on the same single screen in the current state of the category tool. 
+The \ct was in an appalling and unstable state when this group inherited it. The \ct does not conform to many general design principles and crashes on a regular basis. This section describes the many problems with the current design of the \ct.
 
 % Indsæt billede af den nuværende skærm: initial_category_tool.png
 
+\subsection{Interaction design}
+
+There is too much functionality on the same single screen in the current state of the \ct. 
+
+\subsubsection{Buttons}
+
+The \ct includes non standardized buttons of different sizes and shapes. Buttons with square icons have different rectangular shapes. The buttons are too small in general and can be difficult to click. There is no margin between buttons which makes it easy to miss-click grouped buttons.    
+
+\subsubsection{Android Design guidelines}
+
+The Android design guidelines have changed and now advices to exclusively use long press action for multiple selection in lists. Long press is currently used to show a contextual menu for categories where it is possible to change the title, color, and icon of the category and to copy it. It is currently not possibly to perform multiple selection of pictograms. 
+
+\subsubsection{Selection}
+
+There is no visual cues of selection anywhere in the \ct. It is not possible to determine the currently selected category from the list of categories. The only way to determine the current category is from the pictograms displayed to the right in the current selected category. 
+
 \subsection{Crashes}
 
+The application crashes when there are too many pictograms in a category and the user scrolls too far down in the list. 
+
 \subsubsection{Monkey tests}
+
