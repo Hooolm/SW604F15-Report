@@ -1,7 +1,7 @@
 %!TEX root = ../../super_main.tex
 \section{Initial thoughts}
 
-The \ct was in an unstable state and could not even compile when this group inherited it. The \ct does not conform to many general design principles and crashes on a regular basis. This section describes the many design problems and some bugs with the \ct as it was inherited. An screen of the \ct as it looked once we brought it to a compilable state can be seen in \figref{fig:category_tool_old}. The reader is invited to reference \figref{fig:category_tool_old} while reading this section.
+The \ct was in an unstable state and could not even compile when this group inherited it. The \ct does not conform to many general design principles and crashes on a regular basis. This section describes the design problems and some bugs with the \ct as it was inherited. A screenshot of the \ct as it looked once we brought it to a compilable state can be seen in \figref{fig:category_tool_old}. The reader is invited to reference \figref{fig:category_tool_old} while reading this section.
 
 \begin{figure}[!htbp]
     \centering
@@ -16,12 +16,7 @@ There is too much functionality on the same single screen in the current state o
 
 \subsubsection{Buttons}
 
-The \ct includes non standardized buttons of different sizes and shapes. Buttons with square icons have different rectangular shapes. The buttons are too small in general and can be difficult to click. There is no margin between buttons which makes it easy to miss-click grouped buttons.   
-% Alignment of buttons
-The different buttons, and other widgets in general, in the \ct are not alligned very well.
-
-% Buttons popping in and out
-There are a couple of different contextual buttons that only appear once pictograms or categories are selected. 
+The \ct includes non standardized buttons of different sizes and shapes. Buttons with square icons have different rectangular shapes. The buttons are too small in general and can be difficult to click. There is no margin between buttons which makes it easy to miss-click grouped buttons. The different buttons, and other widgets in general, in the \ct are not aligned very well. There are a couple of different contextual buttons that only appear once pictograms or categories are selected. 
 
 \subsubsection{Android Design guidelines}
 
@@ -37,18 +32,13 @@ The application crashes when there are too many pictograms in a category and the
 
 \subsection{Explanatory text}
 
-% Not read
-% Tells about hidden features
-There is cluttering explanatory text in the bottom of the screen which does not really help. The purpose of this explanatory text was to to reveal hidden features in the application like telling the user to long press certain items for a contextual menu to appear. 
+There is cluttering explanatory text in the bottom of the screen which does not really help. The purpose of this explanatory text was to to reveal hidden features in the application, such as telling the user to long press certain items for a contextual menu to appear, which is also against the Android Guidelines \parencite{android_guidelines_longpress}.
 
-\subsection{Pop-ups windows}
+\subsection{Pop-up windows}
 
-% Popups in popups 
 There is multiple contextual pop-ups in the application, for instance when creating a new category. Other pop-ups appears on top of the category creation pop-up when, for instance, the user neglects to provide a name when creating a new category. Pop-ups on pop-ups is not very good practice.  
 
-% Popup overlay does not disappear 
-There is another problem with the pop-ups. The pop-ups creates an overlay ontop of the remaining background only this overlay does not disappear when they are closed using the Android soft- or hardware- back button instead of their cancel button. 
+There is another problem with the pop-ups. The pop-ups creates an overlay on top of the remaining background only this overlay does not disappear when they are closed using the Android soft- or hardware- back button instead of their cancel button. 
  
 \subsubsection{Monkey tests}
-
-% insert stuff about monkey test
+\todo{insert stuff about monkey test}
