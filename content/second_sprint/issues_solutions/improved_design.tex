@@ -14,3 +14,35 @@ Take for instance an institution that have the category \emph{Toys} which have s
 This idea of separating categories into institution- and user-assigned categories can be quite hard to get, so it will require the user-interface to be very clear about which categories are being viewed or modified. Therefor, when using the \ct there should be no point in time where the user does not know what type of categories are being presented. 
 
 \todo[inline]{Write how we have solved this issue. At the moment we do not really have a clear way of differentiating the two different types of categories. Maybe we should use profile-pictures or the top-bar. Also it should be very clear when launching the application, that the categories presented at first, are the categories which are bound to the institution}
+
+\subsection{Home screen}
+\label{sec:home_screen}
+When opening the \ct, the user should be presented with a screen very similar to the markup seen on \figref{fig:improved_design_launch_screen}. As seen on the figure, the user is presented with a list (to the left). This list contains all of the categories that are bound to the specific institution. Please note that the institution is found by checking who opened the application. On the right side of the screen, the user is presented with a small introduction to the tool. For instance, the arrow-text reads \translated{Vælg en kategori for at se dens indhold}{Choose a category to see its content}. This will help to user to understand that the left-side contains categories, and that they are clickable. On the right, the user is also presented with two buttons, namely \translated{Opret ny kategori}{Create new category} and \translated{Administrer borgere}{Administrate citizens}\todo{This text should maybe be changed to ``Administrate categories for citizens''}.
+\\\\
+Whenever a category (in the left menu) is pressed, the user will be transfered to the screen described in \secref{sec:category_selected_screen}.
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.75\textwidth]{sprint_two/improved_design/launch_screen}
+    \caption{Markup of the launch screen}
+    \label{fig:improved_design_launch_screen}
+\end{figure}
+
+\subsection{Category selected screen}
+\label{sec:category_selected_screen}
+Whenever the user selected a category (in the menu on the left) a screen very similar to either \figref{fig:improved_design_category_selected_1} or \figref{fig:improved_design_category_selected_2} should be shown (depending on the amount of pictograms in the category).
+\\\\
+If the category contains no pictograms, a small guide will be shown which will inform the user on how to add pictograms and how to copy the category to users. 
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.75\textwidth]{sprint_two/improved_design/category_selected_1}
+    \caption{Markup of the category selected screen without pictograms}
+    \label{fig:improved_design_category_selected_1}
+\end{figure}
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.75\textwidth]{sprint_two/improved_design/category_selected_2}
+    \caption{Markup of the category selected screen with pictograms}
+    \label{fig:improved_design_category_selected_2}
+\end{figure}
