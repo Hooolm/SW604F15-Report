@@ -2,16 +2,16 @@
 \section{Improved design}
 \label{sec:improved_design}
 
-As previously described, it has been decided to make a major refactoring of the current design of the \ct. The new design must be an improvement to the old design, and should not suffer from some of the same design flaws. Furthermore, the new design should improve usability and should never crash when used.
+As previously described, it has been decided to make a major refactoring of the current design of the \ct. The new design must be an improvement to the old design, and should not suffer from the same design flaws. Furthermore, the new design should improve usability and should never crash when used.
 \\\\
 Instead of just implementing the design straight ahead, some initial markup of the design has been made. This markup will then later be used in the implementation of the design. Different parts of this markup will be described throughout this section.
 
 \subsection{Separation of categories by type}
-The users have previously described that they would like to be able to copy categories between users. To accommodate this, it was decided that categories must  be ``bound'' to an institution instead of actual users. This will ensure that the categories for a specific institution are independent of any users. When a category is assigned to an user, the entire content (pictograms) should be copied to a new category (with the same name). This will allow guardians to make changes to a specific user-assigned category without affecting other user-assigned categories. 
+The users have previously described that they would like to be able to copy categories between users. To accommodate this, it was decided that categories must  be ``bound'' to an institution instead of actual users. This will ensure that the categories for a specific institution are independent of any users. When a category is assigned to a user, the entire content (pictograms) should be copied to a new category (with the same name) which then belongs to the user. This will allow guardians to make changes to a specific user-assigned category without affecting other user-assigned categories. 
 \\\\
-Take for instance an institution that have the category \emph{Toys} which have some standard pictograms associated with it. The guardians of this institution then decide that users \emph{A} and \emph{B} should have access to use this category, therefore they copy the \emph{Toys} category to both users. However, user \emph{A} is unsatisfied with the new category and feels that it is missing his favorite toy. To make \emph{A} happy, the guardians then add a pictogram of his toy to \emph{A}'s category. Because of the way the system is designed, this action should have no effect on the category of \emph{B}.
-\\\\
-This idea of separating categories into institution- and user-assigned categories can be quite hard to understand for new users, so it will require the user-interface to be very clear about which categories are being viewed or modified. Therefor, when using the \ct there should be no point in time where the user does not know what type of categories are being presented. 
+Take for instance an institution that have the category \emph{Toys} which has some standard pictograms associated with it. The guardians of this institution then decide that users \emph{A} and \emph{B} should have access to use this category, therefore they copy the \emph{Toys} category to both users. However, user \emph{A} is unsatisfied with the new category and feels that it is missing his favorite toy. To make \emph{A} happy, the guardians then add a pictogram of his toy to \emph{A}'s category. Because of the way the system is designed, this action should have no effect on the category of \emph{B}. \\
+
+This idea of separating categories into institution- and user-assigned categories can be quite hard to understand for new users, so it will require the user-interface to be very clear about which categories are being viewed or modified. Therefore, when using the \ct there should be no point in time where the user does not know what type of categories are being presented.
 
 \todo[inline]{Write how we have solved this issue. At the moment we do not really have a clear way of differentiating the two different types of categories. Maybe we should use profile-pictures or the top-bar. Also it should be very clear when launching the application, that the categories presented at first, are the categories which are bound to the institution}
 
@@ -30,9 +30,9 @@ Whenever a category (in the left menu) is pressed, the user will be transfered t
 
 \subsection{Category selected screen}
 \label{sec:category_selected_screen}
-Whenever the user selected a category (in the menu on the left) a screen very similar to either \figref{fig:improved_design_category_selected_1} or \figref{fig:improved_design_category_selected_2} should be shown (depending on the amount of pictograms in the category).
-\\\\
-If the category contains no pictograms, a small guide will be shown which will inform the user on how to add pictograms and how to copy the category to users. This will inform users on what the different buttons do. However, if the user is new to the system and needs to work on already existing categories, these buttons could possibly be a bit confusing. 
+Whenever the user selected a category (in the menu on the left) a screen very similar to either \figref{fig:improved_design_category_selected_1} or \figref{fig:improved_design_category_selected_2} should be shown (depending on the amount of pictograms in the category).\\
+
+If the category contains no pictograms, a small guide will be shown which will inform the user on how to add pictograms and how to copy the category to users. This will inform users on what the different buttons do. However, if the user is new to the system and needs to work on already existing categories, these buttons could possibly be a bit confusing. \\
 
 \begin{figure}[!htbp]
     \centering
