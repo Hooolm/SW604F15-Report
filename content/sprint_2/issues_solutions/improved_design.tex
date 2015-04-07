@@ -1,5 +1,5 @@
 %!TEX root = ../../../super_main.tex
-\section{Improved design}
+\section{Improved design of \ct}
 \label{sec:improved_design}
 
 As previously described, it has been decided to make a major refactoring of the current design of the \ct. The new design must be an improvement to the old design, and should not suffer from the same design flaws. Furthermore, the new design should improve usability and should never crash when used.
@@ -49,3 +49,22 @@ If the category selected contains pictograms, the user will be presented with a 
     \caption{Markup of the category selected screen with pictograms}
     \label{fig:improved_design_category_selected_2}
 \end{figure}
+
+\subsection{Creation and Modification of Categories}
+To accommodate the need for creating and removing categories, the following screens have been designed. The category creation screen seen on \figref{fig:improved_design_create_category} will be displayed whenever the \trandlated{Opret ny kategori}{Create new category} button is pressed. The point of this screen is to guide the user in the creation of a new category. There are two points to consider when creating a category, namely choosing the correct pictogram and picking a eloquent title. To make this very clear to the user, two helping arrows have been added, which reads \trandlated{Vælg et piktogram}{Skriv en titel} and \translated{Skriv en titel}{Write a title}. These arrows have been added so that the user knows that the pictogram-box is clickable and so that it is clear that you are able to write text in the text-box. 
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.75\textwidth]{sprint_two/improved_design/create_category}
+    \caption{Markup of the category creation screen}
+    \label{fig:improved_design_create_category}
+\end{figure}
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.75\textwidth]{sprint_two/improved_design/category_settings}
+    \caption{Markup of the settings-dialog for a category}
+    \label{fig:improved_design_category_settings}
+\end{figure}
+
+\FloatBarrier
