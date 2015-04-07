@@ -1,5 +1,5 @@
 %!TEX root = ../../super_main.tex
-\section{Initial thoughts}
+\section{Initial Thoughts}
 
 The \ct was in an unstable state and could not even compile when this group inherited it. The \ct does not conform to many general design principles and crashes on a regular basis. This section describes the design problems and some bugs with the \ct as it was inherited. A screenshot of the \ct as it looked once we brought it to a compilable state can be seen in \figref{fig:category_tool_old}. The reader is invited to reference \figref{fig:category_tool_old} while reading this section.
 
@@ -10,7 +10,7 @@ The \ct was in an unstable state and could not even compile when this group inhe
     \label{fig:category_tool_old}
 \end{figure}
 
-\subsection{Interaction design}
+\subsection{Interaction Design}
 
 There is too much functionality on the same single screen in the current state of the \ct. Creation and modification of categories, sub-categories, adding and removing pictograms from categories is all done on the same screen which leaves little screen estate for each function.  
 
@@ -18,7 +18,7 @@ There is too much functionality on the same single screen in the current state o
 
 The \ct includes non standardized buttons of different sizes and shapes. Buttons with square icons have different rectangular shapes. The buttons are too small in general and can be difficult to click. There is no margin between buttons which makes it easy to miss-click grouped buttons. The different buttons, and other widgets in general, in the \ct are not aligned very well. There are a couple of different contextual buttons that only appear once pictograms or categories are selected. 
 
-\subsubsection{Android Design guidelines}
+\subsubsection{Android Design Guidelines}
 
 The Android design guidelines have changed and now advices to exclusively use long press action for multiple selection in lists. Long press is currently used to show a contextual menu for categories where it is possible to change the title, color, and icon of the category and to copy it. It is currently not possibly to perform multiple selection of pictograms. 
 
@@ -30,15 +30,15 @@ There is no visual cues of selection anywhere in the \ct. It is not possible to 
 
 The application crashes when there are too many pictograms in a category and the user scrolls too far down in the list. 
 
-\subsection{Explanatory text}
+\subsection{Explanatory Text}
 
 There is cluttering explanatory text in the bottom of the screen which does not really help. The purpose of this explanatory text was to to reveal hidden features in the application, such as telling the user to long press certain items for a contextual menu to appear, which is also against the Android Guidelines \parencite{android_guidelines_longpress}.
 
-\subsection{Pop-up windows}
+\subsection{Pop-up Windows}
 
 There is multiple contextual pop-ups in the application, for instance when creating a new category. Other pop-ups appears on top of the category creation pop-up when, for instance, the user neglects to provide a name when creating a new category. Pop-ups on pop-ups is not very good practice.  
 
 There is another problem with the pop-ups. The pop-ups creates an overlay on top of the remaining background only this overlay does not disappear when they are closed using the Android soft- or hardware- back button instead of their cancel button. 
  
-\subsubsection{Monkey tests}
+\subsubsection{Monkey Tests}
 \todo{insert stuff about monkey test}

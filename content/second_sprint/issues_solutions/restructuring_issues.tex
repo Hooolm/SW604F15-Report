@@ -1,5 +1,5 @@
 %!TEX root = ../../../super_main.tex
-\section{Restructuring issues}
+\section{Restructuring Issues}
 \label{sec:restructuring_issues}
 
 During the first sprint, a lot of changes to the submodule structure were introduced by a \emph{Build\&Deployment} group of the multiproject. These changes include changing a lot of submodule dependencies, changing namespaces for submodules, and changing library dependencies. After the aforementioned changes had been implemented for the submodule structure, it had not been enforced in all of the \giraf projects who implemented the submodules. Because of this, many unforeseen issues had been introduced to the system, hereunder mismatches between project structure, gradle.build files and gradle.settings files, and furthermore git issues related to referring to old versions of submodules. Partially due to these changes, the \ct was unable to build and run on any Android device, and we therefore had to spend a lot of time and resources on addressing these issues. \\
