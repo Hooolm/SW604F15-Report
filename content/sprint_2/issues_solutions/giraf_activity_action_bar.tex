@@ -13,6 +13,8 @@ The new \androidinline{ActionBar} was implemented by subclassing the Android \an
 %  Snak om linearlayouts
 The custom \androidinline{ActionBar} is implemented using a custom layout, an Android \androidinline{RelativeLayout}, for the \androidinline{ActionBar}. The \androidinline{RelativeLayout} then contains a centered \androidinline{TextView} for the title and a back-\androidinline{GirafButton} placed at the leftmost position in the \androidinline{ActionBar}. A \androidinline{LinearLayout} is then placed to the right of the back-button and another \androidinline{LinearLayout} is placed to the right of the title; both with the purpose of containing \androidinline{GirafButton} instances added by the client of the \androidinline{GirafActivity} i.e. the client of the customized \androidinline{ActionBar}. \\
 
+\todo{Ilkcan would like to see a picture here}
+
 \subsubsection{GirafActivity API}
 
 The \androidinline{GirafActivity} provides an easy API for adding \giraf buttons, i.e. instances of the \androidinline{GirafButton} class, to its customized \androidinline{ActionBar} through a method called \androidinline{addGirafButtonToActionBar}. \androidinline{addGirafButtonToActionBar} takes two arguments; a \androidinline{GirafButton} and a flag which is either \androidinline{GirafActivity.LEFT} or \androidinline{GirafActivity.RIGHT}. The \androidinline{GirafButton} is then added to the leftmost position of the title, and to the right of the back-button, if the \androidinline{GirafActivity.LEFT} flag is used or conversely to the right of title if the \androidinline{GirafActivity.RIGHT} flag is used. 
