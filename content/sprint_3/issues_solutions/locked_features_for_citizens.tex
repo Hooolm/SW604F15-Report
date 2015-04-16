@@ -1,0 +1,22 @@
+%!TEX root = ../../../super_main.tex
+
+\section{Locked Features for Citizens}
+\label{sec:locked_features_for_citizens}
+
+When viewing categories that have been assigned to a citizen profile it is not possible to change pictograms or names of categories, or copy their categories to other citizens, since the categories that are assigned to the citizen are child-categories of one that is located on the institution. This is enforced such that it is possible to propagate changes from the super-category to the child-categories, which for example could be changing the name of a category across all users that have the category. When locking features for citizens it has been decided that we use the \androidinline{View.setEnabled()} method on \androidinline{GirafButtons} with the value \androidinline{false}, which will automatically gray out the button. We then set a special click-listener on the button that is only active while the button is not enabled. This allows users of the \ct to press buttons that are disabled and then give us the possibility of telling the user the correct way of using the button. This has been implemented on two \androidinline{GirafButtons} in the \ct, namely the Settings- and the CopyCategory-Buttons, since these are not available to citizen categories. 
+
+% \begin{figure}[!htbp]
+%     \centering
+%     \begin{subfigure}
+%     \includegraphics[width=0.75\textwidth]{sprint_three/locked_features_for_citizens/buttons_for_institution}
+%     \caption{\ct enabled buttons}
+%     \label{fig:ct_enabled_buttons}
+%     \begin{subfigure}
+%     \vspace
+%     \begin{subfigure}
+%     \centering
+%     \includegraphics[width=0.75\textwidth]{sprint_three/locked_features_for_citizens/buttons_for_citizen}
+%     \caption{\ct disabled buttons}
+%     \label{fig:ct_disabled_buttons}
+%     \begin{subfigure}
+% \end{figure}
