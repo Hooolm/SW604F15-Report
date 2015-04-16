@@ -5,9 +5,9 @@
 
 \todo[inline]{Do we want a command for the name of Pictosearch?}
 
-When using the \ct a common use case is that the user wants to find and use pictograms in various situations, for instance creating categories or populating categories. For this sake we utilize a service application developed for the \giraf software suite called Pictosearch. This application is able to fetch pictograms given a string. 
+When using the \ct a common use case is that the user wants to find and use pictograms in various situations, for instance as an icon for a category creating categories or populating categories. For this sake we utilize an application developed for the \giraf software suite called Pictosearch. This application includes an \androidinline{Activity} subclass called PictoAdminMain \todo{Check if its stilled called this} which is able to return one or more pictograms to the calling \androidinline{Activity} when a user enters a search string and selects pictograms. 
 \\\\
-In \ct this application have been used in three cases. When creating a category a category, when editing a category and populating the category with pictograms. In order to use another application for this kind of service we utilize the \androidinline{Intent}-class. This class is able to broadcast a request cross the operating system, in our case a very specific request to Pictosearch asking for ids of pictograms. 
+Pictosearch is used in three ways in the \ct. When creating a category, when editing a category, and when populating the category with pictograms. In order to use an \androidinline{Activity} from another application for this kind of request we utilize the \androidinline{Intent}-class. An \androidinline{Activity} is, using an \androidinline{Intent}-class instance, able to make a request to another activity asking for some result cross the operating system, in our case a very specific request to Pictosearch asking for ids of pictograms. 
 
 \lstinputlisting[
     style = Java,
@@ -15,7 +15,7 @@ In \ct this application have been used in three cases. When creating a category 
     label = {lst:intent_example},
 ]{content/sprint_3/issues_solutions/intent_example.java}
 
-The code in \lstref{lst:intent_example} shows an example of how we, using an \androidinline{Intent}, opens Pictosearch and asks for a single pictogram. The thing to notice is that we are able to ask Pictosearch for a single pictogram using the \androidinline{PICTO_SEARCH_SINGLE_TAG}. This opens Pictosearch in a state where we at most is able to pick one pictogram. This is used when picking an icon for category, whereas \androidinline{PICTO_SEARCH_MULTI_TAG} is used when populating a cateogry. 
+The code in \lstref{lst:intent_example} shows an example of how we, using an \androidinline{Intent} instance, request a single pictogram through Pictosearch. We are able to ask Pictosearch for a single pictogram using the \androidinline{PICTO_SEARCH_SINGLE_TAG} tag. This opens the main activity of Pictosearch in a state where where the user is able to pick, at most, one pictogram. This is used when picking an icon for category, whereas \androidinline{PICTO_SEARCH_MULTI_TAG} is used when populating a category with pictograms. 
 \\\\
-When a user have selected the desired pictogram/s he is returned to the \ct, where an event is raised causing the method \androidinline{onActivityResult} to be called. Using the request code (\androidinline{GET_SINGLE_PICTOGRAM} in \lstref{lst:intent_example}), this method knows what request have been answered and can now perform some action based on this, in this case we take the identifier for the pictogram and stores it on the category it was picked for.
+When a user has selected the desired pictograms he is returned to the \ct, where the method \androidinline{onActivityResult} is called with the result. Using the request code (\androidinline{GET_SINGLE_PICTOGRAM} as in \lstref{lst:intent_example}), this method will get the same request code \androidinline{GET_SINGLE_PICTOGRAM} and it will there by know which request that has been answered and can now perform some action based on this, in this case we take the identifier for the pictogram and store it on the category it was picked for.
 
