@@ -5,8 +5,8 @@
 
 The idea is that we want to be able to guide the users, by showcasing areas of the application, through their first visit of the application and later on demand by clicking a help button. 
 
-``ShowcaseView'' is the name of a class and a library licensed under the Apache License, Version 2.0, originally created by Alex Curran and hosted on GitHub \parencite{showcaseview_by_alex_curran}. %https://github.com/amlcurran/ShowcaseView
-As the name suggest the library includes a subclass of \androidinline{View} called ShowcaseView which in combination with the rest of the library can be used to showcase one or more areas of the screen. An area is showcased by putting a dark transparent overlay over the screen and then letting the showcased area, in a circle, be completely transparent along with some text as seen in \figref{fig:showcaseview_example}.
+\androidinline{ShowcaseView} is the name of a class and a library licensed under the Apache License, Version 2.0, originally created by Alex Curran and hosted on GitHub \parencite{showcaseview_by_alex_curran}. %https://github.com/amlcurran/ShowcaseView
+\androidinline{ShowcaseView} is a subclass of \androidinline{View} which, in combination with the rest of the library, can be used to showcase one or more areas of the screen. An area is showcased by putting a dark transparent overlay over the screen and then letting the showcased area, in a circle, be completely transparent along with some text as seen in \figref{fig:showcaseview_example}.
 
 \begin{figure}[!htbp]
     \centering
@@ -16,16 +16,15 @@ As the name suggest the library includes a subclass of \androidinline{View} call
 \end{figure}
 
 \subsection{Apache license}
-
-The ShowcaseView library is licensed under the Apache License 2.0 which allows for modifications and redistribution as long as certain requirements are met \parencite{apache2license}. In summary: The original copyright holder has to be credited, a full copy of the license must be distributed with the software, and changes must be stated.
+As mentioned, this library is licensed under the Apache License 2.0 which allows for modifications and redistribution as long as certain requirements are met \parencite{apache2license}. In summary: The original copyright holder has to be credited, a full copy of the license must be distributed with the software, and changes must be stated.
 
 \subsection{Additions to library}
 
 % NOTICE !!!!!! ------------> Changes here should also be made in the NOTICE file <------------
-The interface Target has been changed to an abstract class. And subclasses of Target, i.e. classes that previously implemented the interface Target, has been modified with additional constructors, methods and properties to allow them to store their radius and a scaleMultiplier (This was previously hard coded). The ViewTarget subclass, of Target, has been further modified to calculate its own radius based on its target View.  
+The interface \androidinline{Target} has been changed to an abstract class. And subclasses of \androidinline{Target}, i.e. classes that previously implemented the interface \androidinline{Target}, has been modified with additional constructors, methods and properties to allow them to store their radius and a \androidinline{scaleMultiplier} (This was previously hard coded). The \androidinline{ViewTarget} subclass, of \androidinline{Target}, has been further modified to calculate its own radius based on its target view.  
 
-The ShowcaseView class and supporting classes have been modified to allow manual positioning of the help text for the ShowcaseView.\\ 
-The TextDrawer class has been modified to fix a problem with negative widths of the drawing area.
+The \androidinline{ShowcaseView} class and supporting classes have been modified to allow manual positioning of the help text for the ShowcaseView.\\ 
+The \androidinline{TextDrawer} class has been modified to fix a problem with negative widths of the drawing area.
 The additions to the library code is also described in a ``NOTICE'' file which is distributed with the code in the library's root directory. 
 
 \subsection{Supporting code}
