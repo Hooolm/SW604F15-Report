@@ -1,0 +1,10 @@
+After a general GUI design meeting, a new sequence deletion method was suggested by the customers. Previously we used the method described in \secref{sec:2s-development-delete}, but the customers requested the option to delete sequences from the main menu through a long press selection. When a sequence is long pressed, the main menu is suppose to enter a selection mode, from where it should be possible to delete the selected sequences. It should be possible to select and deselect sequences through regular press once inside the selection mode. Besides that it should be possible to deselect and exit selection mode upon pressing the back button in the action bar.
+ 
+To quickly overcome this task, we grouped up with sw604f15, as they had a similar issue. Their issue was related to ours in that they also needed the feature to select and deselect an item in a list. The difference between the two projects is that their solution should only select a single item, where ours should be able to select multiple.
+ 
+\fxnote{link til forklaring af sequence code opbygning}
+Previously our project was based around the use of sequence objects and their respective ids to create view that represent the sequences. This resulted in not being able to find the view that belonged to the individual sequences, without passing both sequence and its view when using them in a method. This made it impossible to create the deselection feature when pressing the back button, since the back button was overriding the original back button, which did not pass any parameters.
+ 
+Because of this we chose to implement a new data structure that contains both a sequence and its respective view. Through this, it is possible to create a list of the sequences selected during the selection mode. This allows us to look through the selected sequences list and access their views directly, so that we can modify them as deselected once the back button is pressed.
+ 
+This method of implementation could be directly transferred into group sw604f15's project with minimal changes.
