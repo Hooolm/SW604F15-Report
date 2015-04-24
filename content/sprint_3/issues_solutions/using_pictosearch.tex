@@ -3,15 +3,9 @@
 \section{Using Pictosearch}
 \label{sec:using_pictosearch}
 
-\todo[inline]{Do we want a command for the name of Pictosearch?}
-
 When using the \ct a common use case is that the user wants to find and use pictograms in various situations, for instance as an icon for a category creating categories or populating categories. For this sake we utilize an application developed for the \giraf software suite called Pictosearch. This application includes an \androidinline{Activity} subclass called PictoAdminMain \todo{Check if its stilled called this} which is able to return one or more pictograms to the calling \androidinline{Activity} when a user enters a search string and selects pictograms. 
 \\\\
-<<<<<<< HEAD
-Pictosearch is used in three ways in the \ct. When creating a category, when editing a category, and when populating the category with pictograms. In order to use a remote \androidinline{Activity} from another application for this kind of request we utilize the \androidinline{Intent}-class. An \androidinline{Activity} is, using an \androidinline{Intent}-class instance, able to make a request to another activity asking for some result cross the operating system, in our case a very specific request to Pictosearch asking for IDs of pictograms. 
-=======
-Pictosearch is, in the \ct, used in three cases: When creating a category, when editing a category, and when populating a category with pictograms. In order to use a remote \androidinline{Activity} from another application for this kind of service we utilize the \androidinline{Intent}-class. This class is able to broadcast a request across the operating system, in our case a very specific request to Pictosearch asking for IDs of pictograms. 
->>>>>>> origin/master
+Pictosearch is used in three ways in the \ct: When creating a category, when editing a category, and when populating the category with pictograms. In order to use a remote \androidinline{Activity} from another application for this kind of request we utilize the \androidinline{Intent}-class. An \androidinline{Activity} is, using an \androidinline{Intent}-class instance, able to make a request to another activity asking for some result cross the operating system, in our case a very specific request to Pictosearch asking for IDs of pictograms. 
 
 \lstinputlisting[
     style = Java,
