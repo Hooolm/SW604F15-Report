@@ -14,9 +14,11 @@ The Android framework provides a very useful abstraction which makes it easy to 
 
 \section{Long tasks}
 
+Not causing the application to show an ANR message is one thing, making the user explicitly aware that a longer task is running, through some kind of feedback, is considered good practice \parencite{benyon}. We have tried to provide this feedback through Android \androidinline{ProgressBar} widgets whenever longer operation take place. The name ``ProgressBar'' is a bit misleading since the style of the \androidinline{ProgressBar} we use, which is the default style, is more like a spinning activity indicator as seen in \figref{fig:activity_indicator}. 
 
 \begin{figure}[!htbp]
         \centering
+        \includegraphics[width=0.75\textwidth]{sprint_three/progressbar_example}
         \caption{Android ProgressBar as an activity indicator}
         \label{fig:activity_indicator}
 \end{figure}
