@@ -2,9 +2,9 @@
 \section{Implementation of New Design}
 \label{sec:implementation_of_new_design}
 
-The implementation of the design from \secref{sec:improved_design} has has been partially implemented during the second sprint. The main goal of second sprint in regards to the \ct was to implement the institute level, where guardians were able to create categories for an entire institution that could later be copied to citizens.\\
+The implementation of the design from \secref{sec:improved_design} has has been partially completed during the second sprint. The main goal of second sprint in regards to the \ct was to implement the institute level, where guardians were able to create categories for an entire institution that could later be copied to citizens.\\
 
-As mentioned previously the user is greeted by a homescreen where they can see their current categories or add new ones. This can be seen in \figref{fig:ct_home_screen}. If the user presses the button labeled \translated{Opret ny kategori}{Create new category}, the user is able to create a new category which will be placed in the list on the left. 
+As mentioned previously, the user is greeted by a homescreen where they can see their current categories or add new ones. This can be seen in \figref{fig:ct_home_screen}. If the user presses the button labeled \translated{Opret ny kategori}{Create new category}, the user is able to create a new category which will be placed in the list on the left. 
 
 \begin{figure}[!htbp]
     \centering
@@ -25,4 +25,4 @@ If the user selects a category, the pictogram list for that category will be sho
 
 Both the list of categories as well as the list containing pictograms related to the category have been implemented using \mono{ListView}s and Adapters, which makes sure that items in the list are only loaded when the users scroll past it. This makes sure that excessive amounts of memory will not be used to store the complete list of queried categories or pictograms, and thereby make sure that the application does not crash because of lack of memory. \\
 
-The functionality of selecting a pictogram in a category has been implemented, but the visual cue that tells the user which pictogram is selected (as can be seen on the ``Leget\o j'' category in \figref{fig:ct_category_view}) has not currently been implemented. Furthermore the possibility of removing a selected pictogram from category by clicking the Trashcan-icon in the contextual menu at the bottom has also been implemented. Since the \ct-project is not done yet, work on the project will have to be continued on a later point. 
+The functionality of selecting a pictogram in a category has been implemented, but the visual cue that tells the user which pictogram is selected (as can be seen on the ``Leget\o j'' category in \figref{fig:ct_category_view}) has not currently been implemented. Furthermore, the possibility of removing a selected pictogram from category by clicking the Trashcan-icon in the contextual menu at the bottom has also been implemented. Since the \ct-project is not done yet, work on the project will have to be continued on a later point. 

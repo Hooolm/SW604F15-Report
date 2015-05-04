@@ -11,7 +11,7 @@ The users have previously described that they would like to be able to copy cate
 \\\\
 Take for instance an institution that have the category \emph{Toys} which has some standard pictograms associated with it. The guardians of this institution then decide that users \emph{A} and \emph{B} should have access to use this category, therefore they copy the \emph{Toys} category to both users. However, user \emph{A} is unsatisfied with the new category and feels that it is missing his favorite toy. To make \emph{A} happy, the guardians then add a pictogram of his toy to \emph{A}'s category. Because of the way the system is designed, this action should have no effect on the category of \emph{B}. \\
 
-This idea of separating categories into institution- and user-assigned categories can be quite hard to understand for new users, so it will require the user-interface to be very clear about which categories are being viewed or modified. Therefore, when using the \ct there should be no point in time where the user does not know what type of categories are being presented.
+This idea of separating categories into institution and user-assigned categories can be quite hard to understand for new users, so it will require the user-interface to be very clear about which categories are being viewed or modified. Therefore, when using the \ct there should be no point in time where the user does not know what type of categories are being presented.
 
 \todo[inline]{Write how we have solved this issue. At the moment we do not really have a clear way of differentiating the two different types of categories. Maybe we should use profile-pictures or the top-bar. Also it should be very clear when launching the application, that the categories presented at first, are the categories which are bound to the institution}
 
@@ -19,7 +19,7 @@ This idea of separating categories into institution- and user-assigned categorie
 \label{sec:home_screen}
 When opening the \ct, the user should be presented with a screen very similar to the markup seen on \figref{fig:improved_design_launch_screen}. As seen on the figure, the user is presented with a list (to the left). This list contains all of the categories that are bound to the specific institution. Please note that the institution is found by checking who opened the application. On the right side of the screen, the user is presented with a small introduction to the tool. For instance, the arrow-text reads \translated{Vælg en kategori for at se dens indhold}{Choose a category to see its content}. This will help to user to understand that the left-side contains categories, and that they are clickable. On the right, the user is also presented with two buttons, namely \translated{Opret ny kategori}{Create new category} and \translated{Administrer borgere}{Administrate citizens}\todo{This text should maybe be changed to ``Administrate categories for citizens''}.
 \\\\
-Whenever a category (in the left menu) is pressed, the user will be transfered to the screen described in \secref{sec:category_selected_screen}.
+Whenever a category (in the left menu) is pressed, the user will be transferred to the screen described in \secref{sec:category_selected_screen}.
 
 \begin{figure}[!htbp]
     \centering
@@ -43,7 +43,7 @@ If the category contains no pictograms, an overlay guide will be shown which wil
     \label{fig:improved_design_category_selected_1}
 \end{figure}
 
-The user will be presented with a screen similar to \figref{fig:improved_design_category_selected_2} if the currently selected category contains pictograms. This screen will present the user with a grid of pictogram in the selected category. The user will be able to scroll through the grid if there are more pictograms than available screen estate. 
+The user will be presented with a screen similar to \figref{fig:improved_design_category_selected_2} if the currently selected category contains pictograms. This screen will present the user with a grid of pictograms in the selected category. The user will be able to scroll through the grid if there are more pictograms than available screen estate. 
 
 \begin{figure}[!htbp]
     \centering
@@ -53,7 +53,7 @@ The user will be presented with a screen similar to \figref{fig:improved_design_
 \end{figure}
 
 \subsection{Creation and Modification of Categories}
-To accommodate the need for creating and removing categories, the following screens have been designed. The category creation screen seen on \figref{fig:improved_design_create_category} will be displayed whenever the \translated{Opret ny kategori}{Create new category} button is pressed. The point of this screen is to guide the user in the creation of a new category. There are two points to consider when creating a category, namely choosing the correct pictogram and picking a eloquent title. To make this very clear to the user, two helping arrows have been added, which reads \translated{Vælg et piktogram}{Skriv en titel} and \translated{Skriv en titel}{Write a title}. These arrows have been added so that the user knows that the pictogram-box is clickable and so that it is clear that you are able to write text in the text-box. 
+To accommodate the need for creating and removing categories, the following screens have been designed. The category creation screen seen on \figref{fig:improved_design_create_category} will be displayed whenever the \translated{Opret ny kategori}{Create new category} button is pressed. The point of this screen is to guide the user in the creation of a new category. There are two points to consider when creating a category, namely choosing the correct pictogram and picking an eloquent title. To make this very clear to the user, two helping arrows have been added, which reads \translated{Vælg et piktogram}{Choose a pictogram} and \translated{Skriv en titel}{Write a title}. These arrows have been added so that the user knows that the pictogram-box is clickable and so that it is clear that you are able to write text in the text-box. 
 
 \begin{figure}[!htbp]
     \centering
@@ -62,7 +62,7 @@ To accommodate the need for creating and removing categories, the following scre
     \label{fig:improved_design_create_category}
 \end{figure}
 
-The user might want to change something regarding a category or deleting the category all together. To do this, the user must first select a category, then press the press the cogwheel on the bottom (see \figref{fig:improved_design_category_selected_2}). This will open the dialog-box shown on \figref{fig:improved_design_category_settings}. Here, the user is presented with two buttons, namely \translated{Slet kategori}{Delete category} and \translated{Gem ændringer}{Save changes}. Furthermore, the user is presented with the helpfull text \translated{Her kan du ændre piktogrammet og titlen for kategorien}{You can change the pictogram and the title for the category}. This dialog does not contain any helpfull arrows, because it was deemed unnessecary at this point since the user should be familiar with the way categories are structured. The only thing that might be problematic with this design is that some users might find it hard to figure out how to get this dialog opened. 
+The user might want to change something regarding a category or deleting the category all together. To do this, the user must first select a category, then press the cogwheel on the bottom (see \figref{fig:improved_design_category_selected_2}). This will open the dialog-box shown on \figref{fig:improved_design_category_settings}. Here, the user is presented with two buttons, namely \translated{Slet kategori}{Delete category} and \translated{Gem ændringer}{Save changes}. Furthermore, the user is presented with the helpful text \translated{Her kan du ændre piktogrammet og titlen for kategorien}{You can change the pictogram and the title for the category}. This dialog does not contain any helpful arrows, because it was deemed unnecessary at this point since the user should be familiar with the way categories are structured. The only thing that might be problematic with this design is that some users might find it hard to figure out how to get this dialog opened. 
 
 \begin{figure}[!htbp]
     \centering

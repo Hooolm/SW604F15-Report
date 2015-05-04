@@ -13,7 +13,7 @@ The pop-up dialogs have undergone a major overhaul during the second sprint. The
 
 \subsubsection{Design}
 
-We found the there was two common types of dialogs where we could provide a default implementation for convenience. The first being a simple notification dialog called \androidinline{GirafNotifyDialog} which includes a title, a message, and a button for closing the dialog. And the second a confirmation dialog called \androidinline{GirafConfirmDialog} (see \figref{fig:giraf_confirm_dialog}) which provides an extra confirmation button and the possibility to provide an action for that button through an interface which the calling activity must implement. 
+We found that there were two common types of dialogs where we could provide a default implementation for convenience. The first being a simple notification dialog called \androidinline{GirafNotifyDialog} which includes a title, a message, and a button for closing the dialog. The second is a confirmation dialog called \androidinline{GirafConfirmDialog} (see \figref{fig:giraf_confirm_dialog}) which provides an extra confirmation button and the possibility to provide an action for that button through an interface which the calling activity must implement. 
 
 \begin{figure}[!htbp]
     \centering
@@ -22,9 +22,9 @@ We found the there was two common types of dialogs where we could provide a defa
     \label{fig:giraf_confirm_dialog}
 \end{figure}
 
-We also provide a dialog called \androidinline{GirafCustomButtonsDialog} for simple dialog with more than two buttons.
+We provide a dialog called \androidinline{GirafCustomButtonsDialog} for simple dialog with more than two buttons.\\
 
-For more specialized dialog we provide a more customizable dialog called \androidinline{GirafInflatableDialog} which inflates a given layout resource, parsed as a parameter, for the dialog.
+For more specialized dialogs, we provide a more customizable dialog called \androidinline{GirafInflatableDialog}, which inflates a given layout resource, parsed as a parameter, for the dialog.
 
 All of the dialogs can be closed by clicking outside the dialog.
 
