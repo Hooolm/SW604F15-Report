@@ -1,0 +1,14 @@
+%!TEX root = ../../../super_main.tex
+
+\section{Launcher session}
+\label{sec:launcher_session_issues}
+
+The launcher had a problem with its user sessions. It was impossible to login with a guardian profile again once a citizen profile had logged in.  
+
+\subsection{Issue}
+
+The problem was that the old \androidinline{HomeActivity}, from the previous session, was reused by the Android system when the user had logged out and started a new session with a new login.
+
+\subsection{Solution}
+
+Force the system to create a new \androidinline{HomeActivity} for new session by applying a flag to the \androidinline{Intent} used to start the new \androidinline{HomeActivity}. We also added a flag to all activities in the \launcher that ensures that only one instance of the different activities can be active at any one time.
