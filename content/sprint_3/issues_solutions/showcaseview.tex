@@ -3,9 +3,12 @@
 \section{ShowcaseView}
 \label{sec:showcaseview}
 
-The idea is that we want to be able to guide the users, by showcasing areas of the application, through their first visit of the application and later on demand by clicking a help button. 
+It was our initial intention, as described in \secref{sec:home_screen} and seen in \figref{fig:improved_design_category_selected_1}, \figref{fig:improved_design_category_selected_2}, to have some arrows with accompanying text to help guide the users with their first use of the application. We were however unable to find a library which implemented such an arrow overlay. We did however find another library called \androidinline{ShowcaseView}. 
 
 \androidinline{ShowcaseView} is the name of a class and a library licensed under the Apache License, Version 2.0, originally created by Alex Curran and hosted on GitHub \parencite{showcaseview_by_alex_curran}. %https://github.com/amlcurran/ShowcaseView
+
+The idea is then that we want to be able to guide the users, by showcasing areas of the application, through the first visit of the application and later on demand by clicking a help button. 
+
 \androidinline{ShowcaseView} is a subclass of \androidinline{View} which, in combination with the rest of the library, can be used to showcase one or more areas of the screen. An area is showcased by putting a dark transparent overlay over the screen and then letting the showcased area, in a circle, be completely transparent along with some text as seen in \figref{fig:showcaseview_example}.
 
 \begin{figure}[!htbp]
