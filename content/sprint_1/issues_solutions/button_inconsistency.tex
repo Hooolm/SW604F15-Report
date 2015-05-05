@@ -2,11 +2,11 @@
 \section{Button Inconsistency}
 \label{sub:button_inconsistency}
 
-The graphical design of the GUI was found to be very inconsistent in general around the \giraf-software suite. This issue was discovered by the \emph{SW606F15} group, who is the group responsible for user requirements and the graphical design guide of the project.
-\\\\
-In cooperation with this group, it was found that the implementations of the GUI-components that existed needed refactoring based on the code quality and structure of the existing code base of GUI-components.
-\\\\
-One of the problems found by \emph{SW606F15} is illustrated in figure \figref{fig:button_inconsistency} where it can be seen that the settings button (top most button) and the logout button (lower most button) are very inconsistent in the graphical design. 
+The graphical design of the GUI was found to be very inconsistent in general around the \giraf-software suite. This issue was discovered by the \emph{SW606F15} group, who is the group responsible for user requirements and the graphical design guide of the project. \\
+
+In cooperation with this group, it was found that the implementations of the GUI-components that existed needed refactoring based on the code quality and structure of the existing code base of GUI-components. \\
+
+One of the problems found by \emph{SW606F15} is illustrated in \figref{fig:button_inconsistency} where it can be seen that the settings button (top most button) and the logout button (lower most button) are very inconsistent in the graphical design. \\
 
 \begin{figure}[!htbp]
     \centering
@@ -15,14 +15,11 @@ One of the problems found by \emph{SW606F15} is illustrated in figure \figref{fi
     \label{fig:button_inconsistency}
 \end{figure}
 
-This motivated \emph{SW606F15} to create a graphical design document which will be used to enforce a standard for the GUI \todo{Maybe insert the design document in the appendix and refer to it}. Furthermore, this design flaw was found in the GUI of the \launcher, which made us commit to the job of solving this problem. 
-\\\\
-To solve the button inconsistency, a standardized button should be developed. This standard for buttons should correspond to the looks and feel described in the design document created by \emph{SW606F15}. 
+This motivated \emph{SW606F15} to create a graphical design document which will be used to enforce a standard for the GUI \todo{Maybe insert the design document in the appendix and refer to it}. Furthermore, this design flaw was found in the GUI of the \launcher, which made us commit to the job of solving this problem. \\
 
-\subsection{Solution}
-\label{sub:solution}
+To solve the button inconsistency, a standardized button should be developed. This standard for buttons should correspond to the looks and feel described in the design document created by \emph{SW606F15}. \\
 
-At first, the design document indicated that the there should exist different button types. Each type should have a specific background color associated with it. For instance, buttons with user-actions should have a brown background as seen on \figref{fig:ugly_and_beautiful_buttons_example_one}. However, after implementing this feature, it was discovered that the users at \emph{Birken} did not like these new buttons, and would rather keep the look of the old buttons as seen on \figref{fig:ugly_and_beautiful_buttons_example_two}. However, consistency should still be enforced. This allows for consistent icons and background colors throughout the applications.\\
+At first, the design document indicated that there should exist different button types. Each type should have a specific background color associated with it. For instance, buttons with user-actions should have a brown background as seen in \figref{fig:ugly_and_beautiful_buttons_example_one}. However, after implementing this feature, it was discovered that the users at \emph{Birken} did not like these new buttons, and would rather keep the look of the old buttons as seen in \figref{fig:ugly_and_beautiful_buttons_example_two}. However, consistency should still be enforced. This allows for consistent icons and background colors throughout the applications.\\
 
 \begin{figure}[!htbp]
     \centering
@@ -45,6 +42,6 @@ At first, the design document indicated that the there should exist different bu
     \label{fig:ugly_and_beautiful_buttons_example_solution}
 \end{figure}
 
-To create the standardized button, a set of graphical icons were made by group \emph{SW606F15}. These icons were then combined with a rounded square with a gradient background with the colors corresponding to the old buttons. All of this was made in the \mono{Giraf\_components}-module, which means that all applications are allowed to use this button. It is however still possible to use wrong icons, but we hope that the other groups will start to use this new button in their projects.
-\\\\
-Buttons are not the only thing that is inconsistent in the design, however we did not have enough time to create any other standardized components. 
+To create the standardized button, a set of graphical icons were made by group \emph{SW606F15}. These icons were then combined with a rounded square with a gradient background with the colors corresponding to the old buttons. All of this was made in the \mono{Giraf\_components}-module, which means that all applications are allowed to use this button. It is however still possible to use wrong icons, but we hope that the other groups will start to use this new button in their projects. \\
+
+Buttons are not the only thing that is inconsistent in the design, however we did not have enough time to create any other standardized components. \\

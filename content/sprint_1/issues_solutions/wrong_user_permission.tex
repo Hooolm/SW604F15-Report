@@ -8,7 +8,4 @@ However, these different profile-types are not enforced correctly in the \launch
 \\\\
 Before a guardian hands the tablet to a user, the guardian needs to switch profile to that specific user, so that the system knows what features should be available. Only guardians should be allowed to switch profiles. Currently all profile types are able to switch profiles, meaning that regular users can switch to a guardian profile and thereby gain access to parts of the application that should otherwise be unavailable.
 
-\subsection{Solutions}
-\label{sub:wrong_user_permissions_solutions}
-
 We fixed the problem by adding a simple check to profile-type of the current user. The buttons which allowed for switching profiles and settings would then be disabled if the current user is not a guardian or administrator.
