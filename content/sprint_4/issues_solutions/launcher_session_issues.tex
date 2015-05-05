@@ -3,7 +3,7 @@
 \section{Launcher session}
 \label{sec:launcher_session_issues}
 
-The launcher had a problem with its user sessions. It was impossible to login with a guardian profile again once a citizen profile had logged in, without terminating the application. \\
+The \launcher had a problem with its user sessions. It was impossible to login with a guardian profile again once a citizen profile had logged in, without terminating the application. \\
 
 The problem was that the old \androidinline{HomeActivity}, from the previous session, was reused by the Android system when the user had logged out and started a new session with a new login.\\
 
