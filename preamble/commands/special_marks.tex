@@ -17,3 +17,9 @@
 % Crossmark
 \newcommand{\crossmark}{\ding{55}}		
 \newcommand{\bcrosmark}{\ding{56}}		
+
+% CD paths with icon.
+\newcommand{\cdpath}[1]{%
+  % Param1: path
+  \hyperref[app:cd]{\raisebox{-0.28ex}{\includegraphics[height=0.85em]{cd}}\mono{/#1}}%
+}
