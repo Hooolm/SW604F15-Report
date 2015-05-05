@@ -1,18 +1,18 @@
 %!TEX root = ../../../super_main.tex
 
-\section{Android GUI thread}
+\section{Android GUI Thread}
 \label{sec:gui_thread_async_task}
 
 The Android system imposes real time constraints on applications to keep them smooth and lag free. This section covers how we make sure we do not violate these constraints across all application code.
 
-\subsection{GUI thread}
+\subsection{GUI Thread}
 The real time constraints are implemented on a special GUI thread which runs the user interface event loop, which is basically a queue of tasks. Applications, e.g. activities, in the Android eco system run, i.e updates their views, on this GUI thread. Any updates to views not coming from the GUI thread will result in an exception. In Android, these real time constraints on the GUI thread have been implemented by simply setting a hard limit on how long, in real time, tasks on the GUI thread are allowed to run. Any violation of the constraints will result in an Application Not Responding (ANR) message to the user \parencite{android_avoid_anr}. Users will not be able to distinguish an unresponsive application, e.g. the result of a deadlock, from a task taking too long on the GUI thread, which may cause the user to terminate an otherwise functioning application that was doing some complicated database query or downloading some file from the Internet. 
 
-\subsection{The solution: AsyncTask}
+\subsection{AsyncTask}
 
 The Android framework provides a very useful abstraction which makes it easy to run long tasks in the background with a class called AsyncTask. The AsyncTask provides four non final methods that make it easy to synchronize between a background thread and the GUI thread. The three methods \androidinline{onPreExecute}, \androidinline{onProgressUpdate}, \androidinline{onPostExecute} are always all guaranteed to run on the GUI thread. The last method, \androidinline{doInBackground}, always runs on an unspecified background thread from a pool of threads maintained by the system. The class then ensures an order on these method calls being: \androidinline{onPreExecute}, \androidinline{doInBackground}, \androidinline{onPostExecute}. The \androidinline{onProgressUpdate} method can be run multiple times while the doInBackground method is running and is started by a call to a method called \androidinline{publishProgress} from the \androidinline{doInBackground} method.  
 
-\subsection{Long tasks}
+\subsection{Long Tasks}
 
 Not causing the application to show an ANR message is one thing, making the user explicitly aware that a longer task is running, through some kind of feedback, is considered good practice as well \parencite{benyon}. We have tried to provide this feedback through Android \androidinline{ProgressBar} widgets whenever long operations take place. The name ``ProgressBar'' is a bit misleading since the style of the \androidinline{ProgressBar} we use, which is the default style, is more like a spinning activity indicator as seen in \figref{fig:activity_indicator}. 
 
