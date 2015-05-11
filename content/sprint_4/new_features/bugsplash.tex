@@ -5,7 +5,7 @@
 
 We have implemented a bug splash screen with the hope of displaying a more meaningful and assuring message in case of uncaught exceptions rather than just letting the application crash. The bug splash screen also prints a stack trace of the GUI thread in order to help future developers whom might have forgotten to attach a debugger the one time some rare race condition occurred. An example can be seen in \figref{fig:bug_splash_screen_example}.
 
-The bug splash screen works by setting an \androidinline{UncaughtExceptionHandler} on the shared GUI thread of an application every time a \androidinline{GirafActivity} is created. An existing \androidinline{UncaughtExceptionHandler} would simply be overridden.
+The bug splash screen works by setting an \androidinline{UncaughtExceptionHandler} on the shared GUI thread of an application every time a \androidinline{GirafActivity} is created. An existing \androidinline{UncaughtExceptionHandler} would simply be overridden. A special bug splash \androidinline{Activity} will then be brought to the front in case the \androidinline{UncaughtExceptionHandler} catches an \androidinline{Exception}.
 
 \begin{figure}[!htbp]
         \centering
