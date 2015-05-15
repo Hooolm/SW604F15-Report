@@ -7,6 +7,13 @@ As mentioned previously, the \ct should be able to manage categories for the pro
 \\\\
 This new component was implemented as a dialog using an abstract dialog class from the components, called \androidinline{GirafDialog}. The functionality of this new profile selection dialog was to standardize the way the profile dialogs looks like, along side functionality to allow the user to select either one or arbitrarily many profiles using this dialog. This new dialog is called a \androidinline{GirafProfileSelectorDialog}.
 \\\\
-It was decided that the users should be put in a \androidinline{GridView} like seen in \todo{Insert figure of the dialog and ref to it}. The profiles in the grid should be clickable and allow the user to select the wanted profile easily. When a profile is selected its marked with a yellowish color as indicator.
-\\\\
+It was decided that the users should be put in a \androidinline{GridView} like seen in \figref{fig:dialog_profiles_selector}. The profiles in the grid should be clickable and allow the user to select the wanted profile easily. When a profile is selected its marked with a yellowish color as indicator.
+
+\begin{figure}[!htbp]
+        \centering
+        \includegraphics[width=0.75\textwidth]{sprint_three/dialog_profiles_selector}
+        \caption{\ct enabled buttons}
+        \label{fig:dialog_profiles_selector}
+\end{figure}
+
 In addition, it is possible to set some profiles as marked on opening the dialog for user selection. This was needed in the \ct for the functionality of administrating profiles and their categories. When a guardian wants to assign a category to a citizen the guardian must firstly create a category and then assign which citizens should have this category. In order to be consistent with the rest of the design, it was decided to implement the actual functionality to change profile and view it for a citizen as a button in the actionbar. This rendered the ``Administrate Citizens'' button in the original design (see \secref{sec:home_screen}) useless, and it has therefore been removed. 
