@@ -12,13 +12,13 @@ After the recent handover of \gc from group \emph{SW604F15} to \emph{SW6013F15},
 
     \begin{subfigure}[t]{0.4\textwidth}
         \includegraphics[width=\textwidth]{sprint_three/collab_with_group_13/launcher.png}
-        \caption{\emph{GIRAF}-tab selected}
+        \caption{Launcher}
         \label{fig:collab_with_group_13_launhcer}
     \end{subfigure}
     \hspace{5em} 
     \begin{subfigure}[t]{0.4\textwidth}
         \includegraphics[width=\textwidth]{sprint_three/collab_with_group_13/pictosearch.png}
-        \caption{\emph{Apps}-tab selected}
+        \caption{Old \ps}
         \label{fig:collab_with_group_13_pictosearch}
     \end{subfigure}
     
@@ -26,6 +26,12 @@ After the recent handover of \gc from group \emph{SW604F15} to \emph{SW6013F15},
     \label{fig:collab_with_group_13}
 \end{figure}
 
-Since \emph{SW604F15} had already spent some time on implementing a viewpager for this purpose, a solution for \ps was made in collaboration by these groups. A slight implementation difference was that the viewpager in the launcher is implementing using a \androidinline{FragmentAdapter}, whereas the viewpager in \ps is implemented using \androidinline{GridView}s. The final and update solution can be seen in FIGREF.
+Since \emph{SW604F15} had already spent some time on implementing a viewpager for this purpose, a solution for \ps was made in collaboration by these groups. A slight implementation difference was that the viewpager in the launcher is implementing using a \androidinline{FragmentAdapter}, whereas the viewpager in \ps is implemented using \androidinline{GridView}s. This soloution was though found to be inconsistent in regards to the other displays of pictograms and it was decided that there should be distinction between how applications should be presented and how pictograms and profile pictures should be presented. For this reasons we assisted \emph{SW6013F15} to implemented a \androidinline{GridView} like the one implemented in \ct. The final result of \ps can be seen in \figref{fig:pictosearch}
 
-\todo[inline]{Insert figure of final outcome of pictosearch}
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=\textwidth]{sprint_three/pictosearch}
+    \caption{\ps}
+    \label{fig:pictosearch}
+\end{figure}
