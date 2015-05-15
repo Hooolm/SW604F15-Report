@@ -3,7 +3,7 @@
 \section{Using Pictosearch}
 \label{sec:using_pictosearch}
 
-When using the \ct, a common use case is that the user wants to find and use pictograms in various situations, for instance as an icon for a category or populating categories. For this sake, we utilize an application developed for the \giraf software suite called \ps. This application includes an \androidinline{Activity} subclass called PictoAdminMain \todo{Check if its stilled called this} which is able to return one or more pictograms to the calling \androidinline{Activity} when a user enters a search string and selects pictograms. 
+When using the \ct, a common use case is that the user wants to find and use pictograms in various situations, for instance as an icon for a category or populating categories. For this sake, we utilize an application developed for the \giraf software suite called \ps. This application includes an \androidinline{Activity} subclass called \androidinline{PictoAdminMain} which is able to return one or more pictograms to the calling \androidinline{Activity} when a user enters a search string and selects pictograms. 
 \\\\
 \ps is used in three ways in the \ct: When creating a category, when editing a category, and when populating the category with pictograms. In order to use a remote \androidinline{Activity} from another application for this kind of request we utilize the \androidinline{Intent}-class. An \androidinline{Activity} is, using an \androidinline{Intent}-class instance, able to make a request to another activity asking for some result cross the operating system, in our case a very specific request to \ps asking for IDs of pictograms. 
 
