@@ -23,6 +23,6 @@ If the user selects a category, the pictogram list for that category will be sho
 \end{figure}
 
 
-Both the list of categories as well as the list containing pictograms related to the category have been implemented using \mono{ListView}s and Adapters, which makes sure that items in the list are only loaded when the users scroll past it. This makes sure that excessive amounts of memory will not be used to store the complete list of queried categories or pictograms, and thereby make sure that the application does not crash because of lack of memory. \\
+Both the list of categories as well as the list containing pictograms related to the category have been implemented using \mono{ListView}s and \mono{Adapter}s, which makes sure that items in the list are only loaded when the users scroll past it. This makes sure that excessive amounts of memory will not be used to store the complete list of queried categories or pictograms, and thereby make sure that the application does not crash because of lack of memory. \\
 
 The functionality of selecting a pictogram in a category has been implemented, but the visual cue that tells the user which pictogram is selected (as can be seen on the ``Leget\o j'' category in \figref{fig:ct_category_view}) has not currently been implemented. Furthermore, the possibility of removing a selected pictogram from category by clicking the Trashcan-icon in the contextual menu at the bottom has also been implemented. Since the \ct-project is not done yet, work on the project will have to be continued on a later point. 
