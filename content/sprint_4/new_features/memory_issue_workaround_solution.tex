@@ -1,0 +1,12 @@
+%!TEX root = ../../../super_main.tex
+
+\section{Memory Issue Workaround Solution}
+\label{sec:memory_issue_workaround_solution}
+
+As mentioned in \secref{sec:memory_issues}, there was an issue with bitmaps being kept in memory even when the object displaying the bitmap was deallocated collected. We developed a workaround for this, which was a temporary solution for the \androidinline{GirafPictogramItemView}. As also mentioned in the section, we orientated the database groups about this, and proposed a solution. \\
+
+As of the last week of sprint 4, one database group has implemented a solution somewhat similar to the one we proposed. Previously the database entities that subclassed the BasicImageModel class had the getImage and setImage methods, which would eventually cause a memory leak. \\
+
+This interface has now been removed and instead replaced with an \androidinline{ImageEntity} class which the classes now can subclass. This \androidinline{ImageEntity} is then used in a new \androidinline{BasicImageHelper} database class. This helper has methods that expect an \androidinline{ImageEntity} as input, and then based on the specific type of this input, it can perform actions on the input's corresponding image, e.g. the getImage method on a \androidinline{Pictogram}. \\
+
+This makes sure that references to bitmaps are not kept by the BasicImageModel, and instead an actual bitmap is returned to the very object which is used to call the getImage method on the \androidinline{BasicImageHelper}. This allows us to deallocate bitmaps once the object gets deallocated, and should thereby resolve the memory issues that were present previously. 
