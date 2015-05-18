@@ -1,0 +1,7 @@
+%!TEX root = ../../super_main.tex
+
+\chapter{Conclusion}
+\label{cha:conclusion_sprint_3}
+
+The third sprint concluded with a close to finished \ct and a finished \androidinline{GirafProfileSelectorDialog}. We have also implemented and modified a library called ShowcaseView in the \ct in order to guide users through the application and we have made the modified library available on the \giraf git server. We had some trouble with memory issues because of the hard memory limits set by the Android system and because of the many Bitmaps used to display all the different pictograms. We came up with a temporary solution to the memory issues, until the database groups fixed the database abstraction classes, along with a nice way for other groups and future groups to use our workaround called \androidinline{GirafPictogramItemView} which should be used along with an Android \androidinline{Adapter} when used to display multiple bitmaps at once.
+
