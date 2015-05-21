@@ -3,6 +3,23 @@
 \section{Following design guides}
 \label{sec:following_design_guides}
 
-During the fourth sprint we had a look at the applications we had been working on along with our own design guide line and we found that there were some minor problems which need our attention. We found that the side bar in the settings of the launcher did not follow our own design guide.
+During the fourth sprint we had a look at the applications we had been working on along with our own design guide line and we found that there were some minor problems which required our attention. Among these minor issues we found that the side bar in the settings of the \launcher  did not follow our own design guide. It did not use a proper background and did not use a \androidinline{GirafPictogramItemView} in order to display profile images. The \launcher's settings side bar, before and after, can be seen in \figref{fig:launcher_settings_side_bar_before_and_after}. 
 
-\todo{Indsæt billede af launcher settings før og efter vi fiksede side bar}
+\begin{figure}[!htbp]
+    \centering
+
+    \begin{subfigure}[t]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{sprint_four/settings_side_bar_before}
+        \caption{Before}
+        \label{fig:launcher_settings_side_bar_before}
+    \end{subfigure}
+    \hspace{5em} 
+    \begin{subfigure}[t]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{sprint_four/settings_side_bar_after}
+        \caption{After}
+        \label{fig:launcher_settings_side_bar_after}
+    \end{subfigure}
+    
+    \caption{Launcher settings side bar before and after}
+    \label{fig:launcher_settings_side_bar_before_and_after}
+\end{figure}
