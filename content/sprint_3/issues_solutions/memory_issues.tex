@@ -10,7 +10,7 @@ The main purpose of the \ct is to manage and thereby display, add, and edit pict
 
 The database groups have been informed about the issue and we suggested a solution: Remove all references to the bitmaps kept by the \androidinline{BasicImageModel} and let the clients of the \androidinline{BasicImageModel} subclasses maintain the bitmap references. The database groups are working on a solution as of the end of sprint 3. \\
 
-In order to make the \ct application work for the third sprint end, we implemented a workaround which allowed us to manage the references to bitmaps in the application code and not in the database abstraction code. \\
+In order to make the \ct application work for the third Sprint Review Meeting, we implemented a workaround which allowed us to manage the references to bitmaps in the application code and not in the database abstraction code. \\
 
 The workaround was implemented using Trail: The Reflection API in Java \parencite{java_trail_reflection}. What we did was make a deep copy of the \androidinline{BasicImageModel} object we want to display. We then load the bitmap, keeping a reference to it which we will manage ourself, from the deep copy of our object. The deep copy is then thrown away, insuring that we only have one reference to the bitmap.
 
