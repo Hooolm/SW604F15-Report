@@ -26,3 +26,30 @@ Among these minor issues we found that the side bar in the settings of the \laun
     \caption{Launcher settings side bar before and after}
     \label{fig:launcher_settings_side_bar_before_and_after}
 \end{figure}
+
+
+\section{Margin between applications}
+\label{sec:margin_between_applications}
+Both the home screen and settings screen in the launcher was missing spacing between applications in the grid. An example of the problem can be seen in \figref{fig:margin_between_applications_before} The issue was more pressing in the settings because the user was able to select the different applications. If the user selected all applications on a screen, which would cause all applications to have an orange background which might cause the user to be confused as to which applications are actually selected. This problem was corrected by implementing by adding margin between the different applications as seen in \figref{fig:margin_between_applications_after}.  
+
+
+\begin{figure}[!htbp]
+    \centering
+
+    \begin{subfigure}[t]{0.47\textwidth}
+        \includegraphics[width=\textwidth]{sprint_four/margin_between_applications_before}
+        \caption{Before}
+        \label{fig:margin_between_applications_before}
+    \end{subfigure}
+    \hspace*{\hfill}
+    \begin{subfigure}[t]{0.47\textwidth}
+        \includegraphics[width=\textwidth]{sprint_four/margin_between_applications_after}
+        \caption{After}
+        \label{fig:margin_between_applications_after}
+    \end{subfigure}
+    
+    \caption{Launcher settings side bar before and after}
+    \label{fig:margin_between_applications}
+\end{figure}
+
+\todo[inline]{Update the pictures above to show the settings-panel before and after}
