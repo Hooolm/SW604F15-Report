@@ -1,12 +1,12 @@
 %!TEX root = ../../../super_main.tex
-\section{Improved design of \ct}
+\section{Improved Design of \ct}
 \label{sec:improved_design}
 
 As previously described, we decided to make a major refactoring of the current design of the \ct. The new design must be an improvement to the old design, and should not suffer from the same design flaws. Furthermore, the new design should improve usability and should ideally never crash when used.
 \\\\
 Instead of just implementing an incremental design straight ahead, some initial markup, which has gone through some iterations, of the design has been made. This markup will then later be used in the implementation of the design. Different parts of this markup are described throughout this section.
 
-\subsection{Separation of categories by type}
+\subsection{Separation of Categories by Type}
 The users have previously described that they would like to be able to copy categories between users. To accommodate this, it was decided that categories must  be ``bound'' to an institution instead of actual users. This will ensure that the categories for a specific institution are independent of any users. When a category is assigned to a user, the entire content (pictograms) should be copied to a new category (with the same name) which then belongs to the user. This will allow guardians to make changes to a specific user-assigned category without affecting other user-assigned categories. 
 \\\\
 Take for instance an institution that have the category \emph{Toys} which has some standard pictograms associated with it. The guardians of this institution then decide that users \emph{A} and \emph{B} should have access to use this category, therefore they copy the \emph{Toys} category to both users. However, user \emph{A} is unsatisfied with the new category and feels that it is missing his favorite toy. To make \emph{A} happy, the guardians then add a pictogram of his toy to \emph{A}'s category. Because of the way the system is designed, this action should have no effect on the category of \emph{B}. \\
