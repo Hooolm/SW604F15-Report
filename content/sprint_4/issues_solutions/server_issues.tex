@@ -25,7 +25,7 @@ Once issue 1 had been resolved, issue 2 presented itself when trying to log into
 
 This group had been working on making some applications standalone, and therefore also worked on a standalone \androidinline{Content Provider}. An \androidinline{Content Provider} is used in Android applications to manage access to a data source \parencite{android_content_provider}. \\
 
-The \androidinline{Content Provider} used by the standalone applications would change, from the \androidinline{Content Provider} provided by the launcher to the applications own standalone \androidinline{Content Provider} described in file called \emph{QuxContentProviderAuthority.java}, if these applications were not launched from the \giraf \launcher. \\
+The \androidinline{Content Provider} used by the standalone applications would change, from the \androidinline{Content Provider} provided by the launcher to the application's own standalone \androidinline{Content Provider} described in file called \emph{QuxContentProviderAuthority.java}, if these applications were not launched from the \giraf \launcher. \\
 
 This new way of managing content providers, unfortunately had the side effect that the \giraf \launcher also had to have a file called \emph{QuxContentProviderAuthority.java} which had to reference its own content provider in order to make the \giraf \launcher work properly. Only the \giraf \launcher did not have such a file since the group working on standalone applications had not informed anyone else about how this new system worked, and the file committed by the standalone group had not been added to the \giraf \launcher repository after the rollback. \\
 
