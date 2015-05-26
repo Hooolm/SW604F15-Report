@@ -2,11 +2,28 @@
 
 \section{Reengineering the Application Grid}
 \label{sec:reengineering_of_application_grid}
+When the \launcher of the \giraf system is being used, and the user presses the drawer on the left-hand side (see \figrefpage{fig:initial_launcher}), the application container becomes smaller as a result of the drawer moving on the screen. The resulting smaller area has to be repopulated with icons, since the icons are no longer within the boundaries of the screen as seen in \figref{fig:overflow_problem}. Furthermore, the application window currently has a fixed size, while the user is able to select as many applications as he/she wants. This means that if too many applications are chosen, they will surpass the size of the window, and therefore be pushed out of the window. The applications are currently being placed in the \launcher by using \androidinline{LinearLayout}s placed in rows, which then individually contain an amount of icons respective to the icon size. This has a serious effect on performance and smoothness of the \launcher. 
 
-\todo[inline]{Consider inserting an illustration of the problem, or describing where to find this grid. Describe når du væger flere apps end der kan være på din skærm så render det ud over kanten. plz fix}
+\begin{figure}[!htbp]
+    \centering
+    \begin{subfigure}[t]{0.3\textwidth}
+        \centering
+        \includegraphics[width=0.7\textwidth]{sprint_one/reengineering_of_application_grid/overflow_problem_small}
+        \caption{Small sized application icons}
+        \label{fig:overflow_problem_small}
+    \end{subfigure}
+    \hspace{5em} 
+    \begin{subfigure}[t]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{sprint_one/reengineering_of_application_grid/overflow_problem_large}
+        \caption{Large sized application icons}
+        \label{fig:overflow_problem_large}
+    \end{subfigure}
+    
+    \caption{Overflow of application icons}
+    \label{fig:overflow_problem}
+\end{figure}
 
-When the \launcher of the \giraf system is being used, and the user presses the drawer on the left-hand side (see \figrefpage{fig:initial_launcher}), the application container becomes smaller as a result of the drawer moving on the screen. The resulting smaller area has to be repopulated with icons, since the icons are no longer within the boundaries of the screen. Furthermore, the application window currently has a fixed size, while the user is able to select as many applications as he/she wants. This means that if too many applications are chosen, they will surpass the size of the window, and therefore be pushed out of the window. The applications are currently being placed in the \launcher by using \androidinline{LinearLayout}s placed in rows, which then individually contain an amount of icons respective to the icon size. This has a serious effect on performance and smoothness of the \launcher. 
-\\\\
 The application grid has a setting in the settings menu which allows the user to configure the icon size of the applications shown in the \launcher. The icon size is adjusted by pulling the \androidinline{SeekBar} (slider). This settings menu can be seen in \figref{fig:preference_screen_old}.
 
 \begin{figure}[!htbp]
