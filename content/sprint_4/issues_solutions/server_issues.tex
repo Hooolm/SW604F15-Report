@@ -24,7 +24,7 @@ This resulted in having to locate the developers with the newest editions of the
 \end{enumerate}
 
 
-Issue 1 was related to rolling back the MySQL server, which had created a mismatch between the MySQL user password located on the Jenkins server and the actual password needed to access the database. This was resolved due to help from group SW610F15, whom suggested changing the MySQL password to a previous version.
+Issue 1 was related to rolling back the MySQL server, which had created a mismatch between the MySQL user password located on the Jenkins server and the actual password needed to access the database. This was resolved due to help from group \emph{SW610F15}, whom suggested changing the MySQL password to a previous version.
 \\\\
 Once issue 1 had been resolved, issue 2 presented itself when trying to log into the \giraf \launcher. No matter how one attempted to login, an Android Toast (small message) would be displayed saying that no profiles were present in the database. This issue was directly related to one of the groups not pushing all their work after the server reset. This group had been working on making some applications standalone, and therefore also worked on a standalone \androidinline{ContentProvider}. A \androidinline{ContentProvider} is used in Android applications to manage access to a data source \parencite{android_content_provider}. 
 \\\\
