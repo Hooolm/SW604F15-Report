@@ -2,12 +2,11 @@
 \section{Wrong User Permissions}
 \label{sec:wrong_user_permissions}
 
-\todo{Skriv om så profil typer er Admin, Guardian og Citizen. NOTE! Regular user --> citizen}
-
-In the \giraf-applications, there exists three different profile-types, namely \emph{Administrator}, \emph{Guardian}, and \emph{User}. Administrators have the widest permissions, and are allowed to create guardians and users. Guardians can administrate a subset of the users, for instance the users connected to a specific institution, or part of an institution. Users are allowed to use different applications, namely the ones that have been added to their profile by one of their guardians. 
+\todo[inline]{DONE-start(holm): Skriv om så profil typer er Admin, Guardian og Citizen. NOTE! Regular user --> citizen}
+In the \giraf-applications, there exists three types of profiles, namely \emph{Administrator}, \emph{Guardian}, and \emph{User}. Administrators have the widest permissions, and are allowed to create guardians and citizens. Guardians can administrate a subset of the citizens, for instance the users connected to a specific institution, or part of an institution. Citizens are allowed to use different applications, namely the ones that have been added to their profile by one of their guardians. 
 \\\\
-However, these different profile-types are not enforced correctly in the \launcher application. Currently, guardian and user profiles have access to the same features. For instance, a regular user may access the settings-panel and choose which applications that should be accessible for that particular user. This feature should only be available for guardian and administrator profiles.
+However, these different profile-types are not enforced correctly in the \launcher application. Currently, guardian and citizen profiles have access to the same features. For instance, a citizen may access the settings-panel and choose which applications that should be accessible for that same citizen. This feature should only be available for guardian and administrator profiles.
 \\\\
-Before a guardian hands the tablet to a user, the guardian needs to switch profile to that specific user, so that the system knows what features should be available. Only guardians or administrators should be allowed to switch profiles. Currently all profile types are able to switch profiles, meaning that regular users can switch to a guardian profile and thereby gain access to parts of the application that should otherwise be unavailable.
+Before a guardian hands the tablet to a user, the guardian needs to switch profile to that specific citizen, so that the system knows what features should be available. Only guardians or administrators should be allowed to switch profiles. Currently all profile types are able to switch profiles, meaning that citizens them self can switch to a guardian profile and thereby gain access to parts of the application that should otherwise be unavailable for them.
 \\\\
-We fixed the problem by checking the profile-type of the current user. The buttons which allowed for switching profiles and settings would then be hidden if the current user is not a guardian or administrator.
+We fixed the problem by checking the type of the active profile. The buttons which allowed for switching profiles and settings would then be hidden if the current user is not a guardian or administrator.\todo[inline]{DONE-end(holm)}
