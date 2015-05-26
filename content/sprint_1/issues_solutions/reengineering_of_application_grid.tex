@@ -2,6 +2,8 @@
 
 \section{Reengineering the Application Grid}
 \label{sec:reengineering_of_application_grid}
+
+\todo{DONE (Holm har indsat figure som viser overlofw af applications.)}
 When the \launcher of the \giraf system is being used, and the user presses the drawer on the left-hand side (see \figrefpage{fig:initial_launcher}), the application container becomes smaller as a result of the drawer moving on the screen. The resulting smaller area has to be repopulated with icons, since the icons are no longer within the boundaries of the screen as seen in \figref{fig:overflow_problem}. Furthermore, the application window currently has a fixed size, while the user is able to select as many applications as he/she wants. This means that if too many applications are chosen, they will surpass the size of the window, and therefore be pushed out of the window. The applications are currently being placed in the \launcher by using \androidinline{LinearLayout}s placed in rows, which then individually contain an amount of icons respective to the icon size. This has a serious effect on performance and smoothness of the \launcher. 
 
 \begin{figure}[!htbp]
