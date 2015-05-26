@@ -2,11 +2,10 @@
 \section{Crash in Settings Tab}
 \label{sec:crash_in_settings_tab}
 
-We have discovered a bug related to the settings menu in the \launcher GUI during one of the initial automated monkey test of the GUI. The bug occurs when the different tabs of the settings menu are clicked in rapid succession, especially the tab where the user is able to select which Android applications they want to see in the \giraf \launcher.
+We discovered a bug related to the settings menu in the \launcher GUI during one of the initial automated monkey test of the GUI. The bug occurs when the different tabs of the settings menu are clicked in rapid succession, especially the tab where the user is able to select which Android applications they want to see in the \giraf \launcher.
 \\\\
-The cause of the bug is found to be a race condition caused by manipulation of a static reference called \androidinline{mAppInfoHashMap} on an \androidinline{AppViewCreationUtility} object. This manipulation happens from the main (GUI) thread and a background thread managed by a \androidinline{LoadApplicationTask}. The reference was manipulated in two different methods \androidinline{updateAppInfoHashMap} and a method \androidinline{onClick} defined in an anonymous subclass of \androidinline{View.OnClickListener}. The race condition occurs because the \androidinline{onClick} is invoked on the GUI thread while the \androidinline{updateAppInfoHashMap} method is invoked on the a background thread, managed by a \androidinline{LoadApplicationTask}, concurrently. \\
+The cause of the bug is found to be a race condition caused by manipulation of a static reference called \androidinline{mAppInfoHashMap} on an \androidinline{AppViewCreationUtility} object. This manipulation happens from the main (GUI) thread and a background thread managed by a \androidinline{LoadApplicationTask}. The reference was manipulated in two different methods \androidinline{updateAppInfoHashMap} and a method \androidinline{onClick} defined in an anonymous subclass of \androidinline{View.OnClickListener}. The race condition occurs because the \androidinline{onClick} is invoked on the GUI thread, while the \androidinline{updateAppInfoHashMap} method is invoked concurrently (possibly in parallel) on a background thread, managed by a \androidinline{LoadApplicationTask}. \\
 
-The race condition is resolved by using monitors, i.e. by utilizing the \androidinline{synchronized} Java keyword, in order to protect the critical sections where the \androidinline{mAppInfoHashMap} reference was manipulated. This ensures the only one task or thread has access to the variable at any time, and therefore the race condition can not happen.
+The race condition is resolved by using monitors, i.e. by utilizing the \androidinline{synchronized} Java keyword, in order to protect the critical sections where the \androidinline{mAppInfoHashMap} reference was manipulated. This ensures that only one thread has access to the variable at any time, and therefore the race condition can not happen.
 
-
-
+\todo{Tell that we are not guaranteed to be fixed but the bug could not be reproduced}

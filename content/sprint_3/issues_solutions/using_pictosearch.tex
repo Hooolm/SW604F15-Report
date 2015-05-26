@@ -3,9 +3,9 @@
 \section{Using \ps}
 \label{sec:using_pictosearch}
 
-When using the \ct, a common use case is that the user wants to find and use pictograms in various situations, for instance as an icon for a category or populating categories. For this sake, we utilize an application developed for the \giraf software suite called \ps. This application includes an \androidinline{Activity} subclass called \androidinline{PictoAdminMain} which is able to return one or more pictograms to the calling \androidinline{Activity} when a user enters a search string and selects pictograms. 
+A common use case, when using the \ct, is that the user wants to find and use pictograms in various situations, for instance as an icon for a category or populating categories. For this purpose we utilize an application developed for the \giraf software suite called \ps. This application includes an \androidinline{Activity} subclass called \androidinline{PictoAdminMain} which is able to return one or more pictograms to the calling \androidinline{Activity} when a user enters a search string and selects pictograms. 
 \\\\
-\ps is used in three ways in the \ct: When creating a category, when editing a category, and when populating categories with pictograms. In order to use a remote \androidinline{Activity} from another application for this kind of request we utilize the \androidinline{Intent}-class. An \androidinline{Activity} is, using an \androidinline{Intent}-class instance, able to make a request to another activity asking for some result cross the operating system, in our case a very specific request to \ps asking for IDs of pictograms. 
+\ps is used in three ways in the \ct: When creating a category, when editing a category, and when populating categories with pictograms. In order to use an \androidinline{Activity} from another application, the \androidinline{Intent}-class is utilized. An \androidinline{Activity} is, using this, able to make a request to another activity asking for some result across the operating system, in our case a very specific request to \ps asking for pictogram identifiers. 
 
 \lstinputlisting[
     style = Java,
@@ -13,7 +13,6 @@ When using the \ct, a common use case is that the user wants to find and use pic
     label = {lst:intent_example},
 ]{content/sprint_3/issues_solutions/intent_example.java}
 
-The code in \lstref{lst:intent_example} shows an example of how we, using an \androidinline{Intent} instance, open \ps and ask for a single pictogram. The thing to notice is that we are able to ask \ps for a single pictogram using the \androidinline{PICTO_SEARCH_SINGLE_TAG}-tag, where the user is only able to select a single pictogram. This is used when picking an icon for category, whereas the \androidinline{PICTO_SEARCH_MULTI_TAG}-tag is used when multiple pictograms should be returned (for instance when populating a category). 
+The code in \lstref{lst:intent_example} shows an example of how we, using an \androidinline{Intent} instance, open \ps and ask for a single pictogram \footnote{Please note that the way of making request to \ps has changed since then.}. By using the \androidinline{PICTO_SEARCH_SINGLE_TAG}-tag, the user is only able to select a single pictogram, whereas the \androidinline{PICTO_SEARCH_MULTI_TAG}-tag is used when multiple pictograms should be returned (for instance when populating a category). 
 \\\\
-When a user has selected the desired pictogram(s), he is returned to the \ct, where an event is raised causing the method \androidinline{onActivityResult} to be called. Using the request code (\androidinline{GET_SINGLE_PICTOGRAM} in \lstref{lst:intent_example}), this method knows what request has been answered, and can now perform some action based on this, which in this case is to store the identifier for the pictogram in the category it was picked for.
-
+When a user has selected the desired pictograms, he is returned to the \ct, where the \androidinline{onActivityResult} method is called to handle the result of the \androidinline{Intent}. Using the request code \androidinline{GET_SINGLE_PICTOGRAM}, this method knows what request has been answered, and can now perform some action based on this.
