@@ -1,12 +1,12 @@
 %!TEX root = ../../../super_main.tex
 
-\section{Following Design Guides}
+\section{Following the Design Manual}
 \label{sec:following_design_guides}
-During the fourth sprint we had a look at the applications we had been working on along with our own design guide line and we found that there were some minor problems which required our attention. Some of these problems will be described in this section.
+During the fourth sprint, we had a look at the applications we had been working on along with our own design manual and we found that there were some minor problems which required our attention. Some of these problems are described in this section.
 
-\subsection{Wrong Sidebar}
+\subsection{Incorrect Sidebar}
 \label{sec:wrong_sidebar}
-Among these minor issues we found that the side bar in the settings of the \launcher did not follow our own design guide. It did not use a proper background and did not use a \androidinline{GirafPictogramItemView} in order to display profile images. The \launcher's settings side bar, before and after, can be seen in \figref{fig:launcher_settings_side_bar_before_and_after}. Furthermore, the icons used in the side bar were also updated. The new icons can be seen in \figref{fig:launcher_settings_side_bar_after}.
+Among these minor issues, we found that the side bar in the settings of the \launcher did not conform to our own design manual. It did not use the proper background and did not use a \androidinline{GirafPictogramItemView} in order to display profile images. The \launcher's settings side bar, before and after, can be seen in \figref{fig:launcher_settings_side_bar_before_and_after}. Furthermore, the icons used in the side bar were also updated. The new icons can be seen in \figref{fig:launcher_settings_side_bar_after}. \todo{De skulle være tilføjet design manualen (lave en todo i den måske).}
 
 \begin{figure}[!htbp]
     \centering
@@ -28,7 +28,7 @@ Among these minor issues we found that the side bar in the settings of the \laun
 \end{figure}
 
 
-\section{Margin Between Applications}
+\subsection{Margin Between Applications}
 \label{sec:margin_between_applications}
 Both the home screen and settings screen in the launcher was missing spacing between applications in the grid. An example of the problem can be seen in \figref{fig:margin_between_applications_before}. The issue was more pressing in the settings, because the user was able to select the different applications. If the user selected all applications on a screen, it would cause all applications to have an orange background, which might cause the user to be confused as to which applications are actually selected. This problem was corrected by implementing margin between the different applications as seen in \figref{fig:margin_between_applications_after}.  
 
@@ -51,3 +51,5 @@ Both the home screen and settings screen in the launcher was missing spacing bet
     \caption{Launcher settings side bar before and after}
     \label{fig:margin_between_applications}
 \end{figure}
+
+\FloatBarrier
