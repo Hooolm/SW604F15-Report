@@ -3,8 +3,7 @@
 \section{Collaboration with Group SW613F15}
 \label{sec:collaboration_with_group_sw613f15}
 
-\todo{Rewrite intro}
-After the recent handover of \gc from group our group to \emph{SW613F15}, it was discovered that a component in \ps was not consistent with the design implemented in the \launcher regarding showing of multiple items, applications and pictograms respectively. This inconsistency can be seen in \figref{fig:collab_with_group_13}.
+After the recent handover of \gc from group \emph{SW604F15} (us) to \emph{SW613F15}, it was discovered that a component in \ps (developed by \emph{SW613F15}) was not consistent with the design implemented in the \launcher (implemented by \emph{SW604F15}) regarding showing of multiple items, applications and pictograms respectively. This inconsistency can be seen in \figref{fig:collab_with_group_13}.
 
 \begin{figure}[!htbp]
     \centering
@@ -26,9 +25,8 @@ After the recent handover of \gc from group our group to \emph{SW613F15}, it was
     \label{fig:collab_with_group_13}
 \end{figure}
 
-Our group had already spent some time on implementing a \androidinline{ViewPager} for the \launcher (see \secref{sec:reengineering_of_application_grid}). For this reason, a solution for \ps was made in collaboration with group \emph{SW613F15}. A slight implementation difference was that the \androidinline{ViewPager} in the launcher is implemented using fragments, whereas the \androidinline{ViewPager} in \ps is implemented using views. \todo{Find billede a viewpager i pictosearch if possibru} 
-\\\\ 
-This solution was later found to be inconsistent with other projects, in regards to the method of displaying pictograms. It was therefore decided that there should be a distinction between how applications and pictograms should be presented. For this reason, we assisted \emph{SW613F15} with implementing a \androidinline{GridView}, just like the one implemented in the \ct. The final result of \ps can be seen in \figref{fig:pictosearch}.
+Since \emph{SW604F15} had already spent some time on implementing a viewpager for this purpose, a solution for \ps was made in collaboration by these groups. A slight implementation difference was that the viewpager in the launcher is implementing using a \androidinline{FragmentAdapter}, whereas the viewpager in \ps is implemented using \androidinline{GridView}s. This soloution was though found to be inconsistent in regards to the other displays of pictograms and it was decided that there should be distinction between how applications should be presented and how pictograms and profile pictures should be presented. For this reasons we assisted \emph{SW613F15} to implemented a \androidinline{GridView} like the one implemented in \ct. The final result of \ps can be seen in \figref{fig:pictosearch}.
+
 
 \begin{figure}[!htbp]
     \centering
