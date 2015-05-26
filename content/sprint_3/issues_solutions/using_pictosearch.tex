@@ -13,6 +13,6 @@ A common use case, when using the \ct, is that the user wants to find and use pi
     label = {lst:intent_example},
 ]{content/sprint_3/issues_solutions/intent_example.java}
 
-The code in \lstref{lst:intent_example} shows an example of how we, using an \androidinline{Intent} instance, open \ps and ask for a single pictogram \footnote{Please note that the way of making request to \ps has changed since then.}. By using the \androidinline{PICTO_SEARCH_SINGLE_TAG}-tag, the user is only able to select a single pictogram, whereas the \androidinline{PICTO_SEARCH_MULTI_TAG}-tag is used when multiple pictograms should be returned (for instance when populating a category). 
+The code in \lstref{lst:intent_example} shows an example of how we, using an \androidinline{Intent} instance, open \ps and ask for a single pictogram \footnote{Please note that the way of making request to \ps has changed since then.}. By using the\linebreak\androidinline{PICTO_SEARCH_SINGLE_TAG}-tag, the user is only able to select a single pictogram, whereas the\androidinline{PICTO_SEARCH_MULTI_TAG}-tag is used when multiple pictograms should be returned (for instance when populating a category). 
 \\\\
 When a user has selected the desired pictograms, he is returned to the \ct, where the \androidinline{onActivityResult} method is called to handle the result of the \androidinline{Intent}. Using the request code \androidinline{GET_SINGLE_PICTOGRAM}, this method knows what request has been answered, and can now perform some action based on this.
