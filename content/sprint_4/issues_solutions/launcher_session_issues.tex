@@ -7,6 +7,9 @@ The \launcher had a problem with its user sessions, where it was impossible to l
 \\\\
 The problem was caused by the fact that the \androidinline{HomeActivity} from the previous session was reused by the Android system, when the user had logged out and started a new session with a new login.
 \\\\
-The solution is to force the system to create a new \androidinline{HomeActivity} for any new session, by applying a flag to the \androidinline{Intent} used to start the new \androidinline{HomeActivity}. At the same time, we also added a flag to all activities in the \launcher that ensures that only one instance of the different activities can be active at any one time.
+The solution is to force the system to create a new \androidinline{HomeActivity} for any new session, by applying a flag to the \androidinline{Intent} used to start the new \androidinline{HomeActivity}. At the same time, we also added a flag to all activities in the \launcher that ensures that only one instance of the different activities can be active at any one time. 
+\todo[inline]{DONE-start - Marhlder}
+This ensures that any old instances of a given subclass of \androidinline{Activity} would be removed before a new one is added to \launcher's stack of \androidinline{Activity} objects and there is therefore no danger of automatic reuse of any old version of the same \androidinline{Activity} subclass that uses another profile. 
 
 \todo{Marhlder: Skriv hvorfor der kun må være en instans af en aktivitet.}
+\todo[inline]{DONE-end - Marhlder}
