@@ -44,11 +44,12 @@ The creation of \androidinline{LinearLayout} views gave the user a poor experien
 \todo[inline]{DONE-end}
 The functionality in the settings menu that allowed users to change the size of icons has been replaced with the possibility of changing the \launcher grid size. The icon preview in the settings menu now shows an example grid instead. The new setting allows the user to change the size of the grid directly, instead of using the aforementioned indirect icon-resize method. The new settings menu can be seen in \figref{fig:preference_screen_new}.
 
-\todo{Write about the limitation of this settings, we have preset amount of settings. Also mention that we considered two sliders.}
-
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=\textwidth]{sprint_one/reengineering_of_application_grid/preference_screen_new}
     \caption{New preference screen}
     \label{fig:preference_screen_new}
 \end{figure}
+\todo{DONE-start(holm): Write about the limitation of this settings, we have preset amount of settings. Also mention that we considered two sliders.}
+Note that this new type of settings, hence the slider, decrease the amount of possible ways the applications can be displayed. With the updated settings, there only exist six places in where the slider can be set. This is limited in comparison to previous slider that scaled the icons and then calculated the amount of icons here after.
+\todo{DONE-end(holm)}
