@@ -4,7 +4,9 @@
 \label{sec:sprintone_issues_solutions}
 The \launcher application seems to be working fine at a first glance, but further inspection reveals that it has a lot of edge cases that cause it to crash when used for longer periods of time. In order to locate these crashes we conducted a series of unstructured tests and UI/Application Exerciser Monkey (Monkey) tests \parencite{android_monkey}. Monkey is a tool which comes with the Android Debug Bridge (ADB) \parencite{android_adb}, used to perform series of pseudo-random streams of user input events to test the application UI under stress. We found the Monkey tool to be useful and it did help us find several issues in the code, e.g. concurrency issues when switching between tabs in the settings activity of the \launcher.
 \\\\
-In addition to the issues discovered by using the Monkey tool, some requests from the costumers regarding design are also described in this chapter. \todo{Meniton other types of request during this sprint. Developer stories, mention them!}
+In addition to the issues discovered by using the Monkey tool, some requests from the costumers regarding design are also described in this chapter. \todo[inline]{DONE MATHIAS START} We furthermore added a new type of issue to our work method called ``developer story''. A developer story is, in \giraf terminology, a requirement, much like a Scrum user story, which originates from the developers instead of the users. A developer story could be some issue in the code which requires attention of the developers, which is not a bug and would not directly affect the experience of the users. We felt that this was a necessity because the regular user stories were not enough to encapsulate all the issues that had to be solved with the code base. 
+\todo[inline]{DONE MATHIAS END 10-4}
+\todo{Meniton other types of request during this sprint.}
 
 
 \input{content/sprint_1/issues_solutions/crash_in_settings_tab}
