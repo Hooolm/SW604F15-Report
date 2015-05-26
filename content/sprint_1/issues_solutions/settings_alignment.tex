@@ -2,8 +2,6 @@
 \section{Settings Alignment}
 \label{sec:settings_alignment}
 
-\todo{Move section to after setting tab section.}
-
 The settings tab in the \launcher contains the different settings for the user. We noticed during the development, that some of the settings in the panel are not aligned, which gives a bad impression. We are able to confirm in the code, that the misplacement of the settings is caused by the way a \androidinline{SwitchPreference} is made in Android. By default a \androidinline{SwitchPreference} contains a picture to the left, then some text, and then a switch. As a result, the text is moved to the right to accommodate for the fact that a picture can be present. We intend to change it so that all the settings in the settings panel are aligned to the left side, such that the panel has a consistent look. The look of the panel with misplaced settings can be seen in \figref{fig:settings_alignment_bad}.
 
 \begin{figure}[!htbp]
